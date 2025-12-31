@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>삼성화재 | 사이버보험 모바일 웹</title>
+        <link rel="stylesheet" href="../../resources/css/default.css" />
+    </head>
+    <body id="type-a">
+        <form id="login-form" class="min-h-screen login-wrap inner">
+            <div class="login-header pos-relative fade-in">
+                <button type="button" class="pos-absolute pos-left-0 pos-top-0">
+                    <img src="../../assets/images/icon/icon_arrow_left_tail.svg" alt="" />
+                </button>
+                <h1>
+                    <img src="../../assets/images/logo/logo_text_pri_ko.svg" alt="삼성화재 사이버 보험" />
+                </h1>
+            </div>
+            <div class="login-container fade-in">
+                <img src="../../assets/images/tab_a.svg" alt="" />
+                <div>
+                    <div class="form-input">
+                        <input name="id" type="text" placeholder="아이디 또는 이메일" required />
+                    </div>
+                    <div class="form-input">
+                        <input name="password" type="password" placeholder="패스워드" required />
+                    </div>
+                </div>
+                <ul class="login-links fade-in">
+                    <li><a href="#">비밀번호 찾기</a></li>
+                    <li><a href="#">아이디 찾기</a></li>
+                    <li><a href="#" class="txt-pri weight-700">회원가입</a></li>
+                </ul>
+            </div>
+            <button type="submit" class="btn btn-pri w-100 flex-item-bottom fade-in fade-in-animate">로그인</button>
+        </form>
+        <div class="loader-wrap">
+            <div class="loader-container">
+                <div class="d-flex flex-col g-12">
+                    <span class="loader"></span>
+                    <span class="txt-pri">로딩중..</span>
+                </div>
+            </div>
+        </div>
+        <script src="../../resources/js/jquery-3.7.1.min.js"></script>
+        <script src="../../resources/js/swiper-bundle.min.js"></script>
+        <script src="../../resources/js/gsap.min.js"></script>
+        <script src="../../resources/js/ScrollSmoother.js"></script>
+        <script src="../../resources/js/ScrollTrigger.js"></script>
+        <script src="../../resources/js/common.js"></script>
+        <script>
+            /* 
+                1. Submit 액션
+                2. Id val, Pw val Check 
+                    2.1 틀렸을 시 Alert("아이디 혹은 비밀번호가 틀립니다.")
+                    2.2 맞았을 시 
+                        2.2.1 로딩 show 
+                        2.2.2 라우터 이동 main.html로 라우터 이동
+            */
+            const testId = 'itpub';
+            const testPassword = 'itpub2026';
+
+            const loginForm = document.querySelector('#login-form');
+
+            loginForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const idInput = event.target['id'];
+                const pwInput = event.target['password'];
+
+                if (idInput.value === testId && pwInput.value === testPassword) {
+                    $('.loader-wrap').show();
+
+                    setTimeout(() => {
+                        window.location.href = './main.html';
+                    }, 1500);
+                }
+
+                if (idInput.value !== testId || pwInput.value !== testPassword) {
+                    alert('아이디 혹은 비밀번호가 잘못되었습니다.');
+                    idInput.focus();
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-size: 1.6rem;
+}
+
+#index-page-wrap {
+    margin: 0 auto;
+    max-width: 130rem;
+    padding-inline: 1.6rem;
+}
+
+#index-page-wrap .container {
+    padding-block: 16rem 4rem;
+}
+
+.index-header {
+    border-bottom: 0.1rem solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+}
+
+.index-header-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 130rem;
+    height: 100%;
+    padding-block: 2rem;
+    padding-inline: 1.6rem;
+}
+
+.page-title-wrap {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.page-title-wrap img {
+    width: 32rem;
+    height: auto;
+}
+
+.page-title-wrap strong {
+    font-size: 2.4rem;
+}
+
+.project-status {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.project-status > p {
+    padding: 8px;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+}
+
+.project-status span {
+    font-weight: 700;
+}
+
+.project-search > input {
+    border: 0.1rem solid #ddd;
+    width: 100%;
+    height: 4rem;
+    padding-inline: 1.2rem;
+    border-radius: 0.6rem;
+}
+
+.project-search > input:disabled {
+    background-color: #eee;
+}
+
+.index-table th,
+td {
+    padding: 0.4rem 0.8rem;
+    height: 4rem;
+}
+
+.index-table thead th {
+    border-top: 0.1rem solid #333;
+    border-bottom: 0.1rem solid #333;
+    background-color: #f0f0f0;
+}
+
+.index-table thead th:not(:last-child) {
+    border-right: 0.1rem solid #333;
+}
+
+.index-table td {
+    font-size: 1.5rem;
+    border-bottom: 0.1rem solid #aaa;
+}
+
+.index-table td:not(:last-child) {
+    border-right: 0.1rem solid #aaa;
+}
+
+.index-table a {
+    font-weight: 500;
+    color: var(--pri);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.index-table td.status {
+    font-weight: 700;
+}
+
+.index-table td.status.done {
+    background-color: #d9f7d5;
+    color: #81c147;
+}

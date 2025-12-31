@@ -1,0 +1,651 @@
+:root {
+    --a-pri: #006bff;
+    --a-pri-light: #d5f1fd;
+
+    --a-txt-pri: #222;
+    --a-txt-sec: #444;
+    --a-txt-thr: #666;
+    --a-txt-qua: #999;
+
+    --a-bd-pri: #e0e0e0;
+
+    --a-progress-bg: linear-gradient(90deg, #4fc6df 0%, #006bff 100%);
+
+    --a-bg-gray: #d9d9d9;
+}
+
+#type-a {
+    color: var(--a-txt-sec);
+
+    /* Component */
+    .form-input,
+    .form-select {
+        width: 100%;
+    }
+
+    .form-input input {
+        border: 0.1rem solid var(--a-bd-pri);
+        width: 100%;
+        height: 5.6rem;
+        font-size: 1.6rem;
+        border-radius: 0.6rem;
+        padding-inline: 1.2rem;
+    }
+
+    .form-input input::placeholder {
+        color: var(--a-txt-qua);
+    }
+
+    /* Btn */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.4rem 0.8rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border-radius: 1.2rem;
+    }
+
+    .btn.btn-pri {
+        background-color: var(--a-pri);
+        color: #fff;
+    }
+
+    .btn-fixed {
+        width: 12.8rem;
+        height: 3.6rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 3.6rem;
+        border-radius: 0.8rem;
+        padding-block: 1rem;
+    }
+
+    .btn.btn-outline.btn-dark {
+        border: 0.1rem solid #e0e0e0;
+        background-color: #fff;
+    }
+
+    /* Status */
+    .status-line-container {
+        position: relative;
+        height: 0.8rem;
+    }
+
+    .status-trail {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 0.8rem;
+        background-color: #e0e0e0;
+        border-radius: 1.2rem;
+    }
+
+    .status-inner {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+    }
+
+    .status-inner:nth-of-type(0),
+    .status-inner:nth-of-type(1) {
+        border: 1px solid red !important;
+    }
+
+    .status-line {
+        overflow: hidden;
+        border-radius: 1.2rem;
+    }
+
+    .status-line > svg {
+        height: 0.8rem;
+    }
+
+    .status-handler-wrap {
+        display: inline-flex;
+        gap: 0.4rem;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: -3rem;
+        left: 0;
+        z-index: 3;
+    }
+
+    .status-handler-wrap.is-company .status-handle {
+        background-color: #2888ca;
+    }
+
+    .status-handler-wrap.is-company .status-handle::before {
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #fff;
+        content: '';
+        border-radius: 50%;
+    }
+
+    .status-handler-wrap.is-company .status-handle-num {
+        color: #2888ca;
+    }
+
+    .status-handle-num {
+        font-weight: 700;
+    }
+
+    .status-handle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: #fff;
+        border-radius: 50%;
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+    }
+
+    .status-range {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.8rem;
+    }
+
+    /* Card */
+    .card {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        padding: 2.2rem;
+        width: 100%;
+        border-radius: 1.5rem;
+    }
+
+    .card.card-bg-gray {
+        border: 0.1rem solid #eee;
+        background-color: #f8f8f8;
+    }
+
+    .sub-card {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.4rem;
+        box-shadow: 0 0 10px 0 rgba(0, 69, 153, 0.1);
+        background-color: #fff;
+        border-radius: 1.2rem;
+    }
+
+    /* Progress */
+    .circle-progress-wrap {
+        padding: 1rem;
+        background-color: #e6f0ff;
+        border-radius: 100%;
+    }
+
+    .circle-container-sm {
+        width: 12rem;
+        height: 12rem;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+
+    .circle-container-sm .circle-container-label {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+    .circle-wrap {
+        padding: 1rem;
+        background-color: #e6f0ff;
+        border-radius: 50%;
+    }
+
+    /* Loader */
+    .loader-wrap {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: none;
+    }
+
+    .loader-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid #fff;
+        border-bottom-color: var(--a-pri);
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    /* Utility : 확정 시 Common 이동 */
+    .txt-pri {
+        color: var(--a-pri) !important;
+    }
+    .txt-txt-pri {
+        color: var(--a-txt-pri);
+    }
+    .txt-txt-sec {
+        color: var(--a-txt-sec);
+    }
+    .txt-txt-thr {
+        color: var(--a-txt-thr);
+    }
+
+    /* Progress */
+    progress.progress {
+        overflow: hidden;
+        width: 100%;
+        height: 0.8rem;
+        background-color: transparent;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    progress.progress::-webkit-progress-bar {
+        background-color: var(--a-bg-gray);
+        border-radius: 1.2rem;
+    }
+
+    progress.progress::-webkit-progress-value {
+        background: var(--a-progress-bg);
+        border-radius: 1.2rem;
+    }
+
+    /* Intro */
+    .intro-wrap {
+        background-color: var(--a-pri);
+        padding-block: 10rem 6rem;
+    }
+
+    .intro-desc {
+        margin-top: 16rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+    }
+
+    /* Loading */
+    .loading-wrap {
+        padding-block: 18rem 6rem;
+    }
+
+    .loading-cont {
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+        align-self: center;
+        flex-direction: column;
+    }
+
+    .loading-progress-wrap {
+        width: 24rem;
+    }
+
+    .loading-tit {
+        font-size: 2.4rem;
+        color: var(--a-txt-thr);
+        text-align: center;
+    }
+
+    /* Login */
+    .login-wrap {
+        padding-block: 4rem 3rem;
+    }
+
+    .login-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .login-header h1 {
+        margin-top: 0.6rem;
+    }
+
+    .login-container {
+        display: flex;
+        gap: 4rem;
+        flex-direction: column;
+        margin-top: 8rem;
+    }
+
+    .login-container .form-input + .form-input {
+        margin-top: 0.8rem;
+    }
+
+    .login-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-links > li > a {
+        font-size: 1.4rem;
+        color: var(--a-txt-thr);
+    }
+
+    .login-links > li:not(:first-child)::before {
+        display: inline-block;
+        width: 0.1rem;
+        height: 1rem;
+        background-color: #d9d9d9;
+        content: '';
+        margin-inline: 1.6rem;
+    }
+
+    /* Main */
+    .main section:last-child {
+        padding-bottom: 3rem;
+    }
+
+    /* Sub */
+    #container.sub {
+        padding-bottom: 4rem;
+    }
+
+    .sub-header-tit {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .hero-banner {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.02) inset;
+        overflow: hidden;
+        background: linear-gradient(180deg, #ebf4ff 45%, #c9e1ff 100%);
+    }
+    .hero-banner-inner {
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 1.6rem;
+        padding-block: 1.4rem 0.8rem;
+    }
+    .hero-banner-inner img {
+        width: 13rem;
+    }
+
+    .hero-banner-txt {
+        display: flex;
+        gap: 0.4rem;
+        flex-direction: column;
+    }
+    .hero-banner-desc {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--a-txt-sec);
+    }
+    .hero-banner-tit {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--a-pri);
+    }
+
+    .hero-banner-list .swiper-indicator {
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        z-index: 1;
+        transform: translateX(-50%);
+    }
+
+    .hero-banner-list .swiper-pagination {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+    }
+
+    .hero-banner-list .swiper-pagination-bullet {
+        background-color: var(-- a-txt-thr);
+    }
+
+    .hero-banner-list .swiper-pagination-bullet-active {
+        background-color: #4fc6df !important;
+    }
+
+    .hero-banner img {
+        animation: floating-lg 1.5s infinite alternate;
+    }
+
+    .company-summary {
+        margin-top: -3.2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .risk-overview-txt {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    .risk-overview-txt strong {
+        font-size: 5.4rem;
+        line-height: 100%;
+        margin-block: 1.2rem 0.2rem;
+    }
+
+    .risk-status {
+        text-align: center;
+    }
+
+    .risk-status-same-average {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.8rem;
+        margin-block: 0.6rem 1.6rem;
+    }
+
+    .risk-status-same-average svg {
+        margin-left: 0.5rem;
+    }
+
+    .risk-status-same-average > strong {
+        font-size: 2.4rem;
+    }
+
+    .main-status-section {
+        padding-block: 2rem 1.5rem;
+        padding-inline: 1.6rem;
+    }
+
+    .main-status-section:nth-child(odd) {
+        background-color: #f8f8f8;
+    }
+
+    .main-status-section:nth-child(even) {
+        background-color: #fff;
+    }
+
+    .main-status-section h3 {
+        margin-bottom: 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+
+    .accident-status-wrap {
+        margin-block: 2.4rem 3rem;
+    }
+
+    .accident-status-wrap .step-list.column {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 0.1rem solid var(--a-bd-pri);
+    }
+
+    .accident-status-tit {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .step-list.row {
+        display: flex;
+    }
+
+    .step-list.row > li {
+        flex: 1;
+        position: relative;
+    }
+
+    .step-list.row .step-cont {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        color: var(--a-txt-thr);
+        text-align: center;
+    }
+
+    .step-list.row .step-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .step-list.row li.is-done .step-icon {
+        background-color: var(--a-pri);
+    }
+
+    .step-list.row li.is-done .step-icon::before {
+        content: '';
+        display: inline-block;
+        width: 1.2rem;
+        height: 0.9rem;
+        background: url(../../assets/images/icon/icon_check_white.svg) no-repeat center / cover;
+    }
+
+    .step-list.row li.is-curr .step-icon {
+        background-color: var(--a-pri-light);
+    }
+
+    .step-list.row li.is-curr .step-icon::before {
+        content: '';
+        display: inline-block;
+        width: 1.4rem;
+        height: 1.4rem;
+        background: url(../../assets/images/icon/icon_play_pri.svg) no-repeat center / 1.1rem 1rem;
+    }
+
+    .step-list.row li:not(.is-curr, .is-done) .step-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: #e0e0e0;
+        margin-top: 4px;
+    }
+
+    .step-list.row li:not(:last-child):after {
+        position: absolute;
+        top: 1.2rem;
+        left: 4rem;
+        height: 0.2rem;
+        width: 100%;
+        display: inline-block;
+        content: '';
+        background-color: #e0e0e0;
+    }
+
+    .step-list.row li.is-done:after {
+        background-color: var(--a-pri);
+    }
+
+    .step-list.column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .step-list.column .step-txt {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .step-list.column li {
+        position: relative;
+    }
+
+    .step-list.column li .step-cont {
+        display: flex;
+        gap: 1.2rem;
+        color: var(--a-txt-thr);
+    }
+
+    .step-list.column li .step-icon {
+        display: inline-block;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: #c0c0c0;
+        position: relative;
+        top: 0.6rem;
+    }
+
+    .step-list.column li .step-txt > strong {
+        font-weight: 400;
+    }
+
+    .step-list.column li .step-txt > span {
+        color: var(--a-txt-qua);
+        font-size: 1.2rem;
+    }
+
+    .step-list.column li:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0.7rem;
+        width: 0.1rem;
+        height: calc(100% + 1.6rem);
+        left: 0.3rem;
+        background-color: #c0c0c0;
+    }
+
+    .step-list.column li.is-curr .step-cont {
+        gap: 0.6rem;
+    }
+
+    .step-list.column li.is-curr .step-icon {
+        background-color: var(--a-pri-light);
+        width: 1.4rem;
+        height: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: -0.4rem;
+    }
+
+    .step-list.column li.is-curr .step-icon:before {
+        content: '';
+        display: inline-block;
+        width: 0.6rem;
+        height: 0.6rem;
+        background-color: var(--a-pri);
+        border-radius: 50%;
+    }
+
+    .step-list.column li.is-curr .step-txt > strong {
+        color: var(--a-txt-pri);
+    }
+}

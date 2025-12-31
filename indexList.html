@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>삼성화재 | 사이버보험 모바일 웹</title>
+    </head>
+    <link rel="stylesheet" href="./resources/css/default.css" />
+    <link rel="stylesheet" href="./resources/css/index-list.css" />
+    <body>
+        <header class="index-header">
+            <div class="index-header-inner">
+                <div class="index-header-left">
+                    <div class="page-title-wrap">
+                        <h2 class="page-title">
+                            <img src="./assets/images/logo/logo.svg" alt="삼성화재 사이버보험" />
+                        </h2>
+                        <strong>| 모바일 웹 프로토타입</strong>
+                    </div>
+                </div>
+                <div class="index-header-right">
+                    <div class="project-status">
+                        <p>전체 페이지 : <span id="allPagesNum"></span></p>
+                        <p>완료 페이지 : <span id="donePagesNum"></span></p>
+                        <p>잔여 페이지 : <span id="remainPagesNum"></span></p>
+                    </div>
+                    <div class="project-search">
+                        <input type="text" id="searchTerm" placeholder="화면명을 입력해주세요" maxlength="30" disabled />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="index-page-wrap">
+            <div class="container">
+                <div class="index-table-wrap">
+                    <table class="index-table">
+                        <caption>
+                            프로젝트 현황 표
+                        </caption>
+                        <colgroup>
+                            <col style="width: 12rem" />
+                            <col style="width: 16rem" />
+                            <col />
+                            <col style="width: 10rem" />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>카테고리</th>
+                                <th>화면명</th>
+                                <th>URL</th>
+                                <th>완료 여부</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Type A -->
+                            <tr>
+                                <td rowspan="5">Type - A</td>
+                                <td>인트로</td>
+                                <td><a href="./pages/prototype-a/intro.html">intro.html</a></td>
+                                <td class="status txt-center">O</td>
+                                <td>
+                                    <p>(20251229) 기본 구조, 스타일링 진행</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>로딩</td>
+                                <td><a href="./pages/prototype-a/loading.html">loading.html</a></td>
+                                <td class="status txt-center">O</td>
+                                <td>
+                                    <p>(20251229) 기본 구조, 스타일링 진행</p>
+                                    <p>(20251230) 애니메이션 적용</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>로그인</td>
+                                <td><a href="./pages/prototype-a/login.html">login.html</a></td>
+                                <td class="status txt-center">O</td>
+                                <td>
+                                    <p>(20251229) 기본 구조, 스타일링 진행</p>
+                                    <p>(20251230) 애니메이션 적용</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>메인</td>
+                                <td><a href="./pages/prototype-a/main.html">main.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td>
+                                    <p>(20251230) 기본 구조, 스타일링 진행</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>사고접수</td>
+                                <td><a href="./pages/prototype-a/accident-report.html">accident-report.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td>
+                                    <p>(20251230) 기본 구조, 스타일링 진행</p>
+                                </td>
+                            </tr>
+                            <!-- Type B -->
+                            <tr>
+                                <td rowspan="5">Type - B</td>
+                                <td>인트로</td>
+                                <td><a href="./pages/prototype-b/intro.html">intro.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>로딩</td>
+                                <td><a href="./pages/prototype-b/loading.html">loading.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>로그인</td>
+                                <td><a href="./pages/prototype-b/login.html">login.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>메인</td>
+                                <td><a href="./pages/prototype-b/main.html">main.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>사고접수</td>
+                                <td><a href="./pages/prototype-b/accident-report.html">accident-report.html</a></td>
+                                <td class="status txt-center"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./resources/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            const pageLength = $('.index-table tbody tr').length;
+            let donePageLength = 0;
+
+            $('.index-table tbody tr').each(function () {
+                var status = $(this).find('td.status').text().trim();
+
+                if (status === 'O' || status === '완료') {
+                    $(this).find('td.status').addClass('done');
+                    donePageLength++;
+                } else {
+                    $(this).find('td.status').addClass('not-done');
+                }
+            });
+
+            $('#allPagesNum').text(pageLength);
+            $('#donePagesNum').text(donePageLength);
+            $('#remainPagesNum').text(pageLength - donePageLength);
+
+            $('.index-table tbody tr a').attr('target', '_blank');
+        });
+    </script>
+</html>
