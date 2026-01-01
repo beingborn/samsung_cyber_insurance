@@ -422,6 +422,14 @@
     align-items: center;
 }
 
+.h-screen {
+    height: 100vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Animation */
 @keyframes floating {
     0% {

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../../resources/css/default.css" />
     </head>
     <body id="type-a">
-        <form id="login-form" class="min-h-screen login-wrap inner">
+        <form id="login-form" class="h-screen login-wrap inner">
             <div class="login-header pos-relative fade-in">
                 <button type="button" class="pos-absolute pos-left-0 pos-top-0">
                     <img src="../../assets/images/icon/icon_arrow_left_tail.svg" alt="" />
@@ -38,7 +38,7 @@
             <div class="loader-container">
                 <div class="d-flex flex-col g-12">
                     <span class="loader"></span>
-                    <span class="txt-pri">로딩중..</span>
+                    <!-- <span class="txt-pri">로딩중..</span> -->
                 </div>
             </div>
         </div>
@@ -49,6 +49,11 @@
         <script src="../../resources/js/ScrollTrigger.js"></script>
         <script src="../../resources/js/common.js"></script>
         <script>
+            function showLoading() {
+                $('body').css('overflow', 'hidden');
+                $('.loader-wrap').show();
+            }
+
             /* 
                 1. Submit 액션
                 2. Id val, Pw val Check 
@@ -69,7 +74,7 @@
                 const pwInput = event.target['password'];
 
                 if (idInput.value === testId && pwInput.value === testPassword) {
-                    $('.loader-wrap').show();
+                    showLoading();
 
                     setTimeout(() => {
                         window.location.href = './main.html';
