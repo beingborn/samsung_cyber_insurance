@@ -1,5 +1,10 @@
+html {
+    overflow-x: auto;
+}
+
 body {
     font-size: 1.6rem;
+    min-width: 120rem;
 }
 
 #index-page-wrap {
@@ -105,7 +110,7 @@ td {
     font-weight: 500;
     color: var(--pri);
     text-decoration: underline;
-    text-underline-offset: 4px;
+    text-underline-offset: 0.4rem;
 }
 
 .index-table td.status {
@@ -115,4 +120,44 @@ td {
 .index-table td.status.done {
     background-color: #d9f7d5;
     color: #81c147;
+}
+
+@media (max-width: 1024px) {
+    .index-header {
+        height: 6rem;
+    }
+
+    #index-page-wrap .container {
+        padding-top: 8rem;
+    }
+
+    .index-header-inner {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .index-header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .project-status {
+        margin: 0;
+    }
+
+    .page-title-wrap strong {
+        font-size: 1.6rem;
+    }
+
+    .page-title-wrap img {
+        width: 16rem;
+    }
+
+    .index-table td,
+    th {
+        font-size: 1.4rem;
+    }
 }

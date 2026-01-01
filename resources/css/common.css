@@ -430,6 +430,29 @@
     align-items: center;
 }
 
+/* Media */
+.lg-only {
+    display: block !important;
+}
+.sm-only {
+    display: none !important;
+}
+.sm-only-flex {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .lg-only {
+        display: none !important;
+    }
+    .sm-only {
+        display: block !important;
+    }
+    .sm-only-flex {
+        display: flex !important;
+    }
+}
+
 /* Animation */
 @keyframes floating {
     0% {
