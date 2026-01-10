@@ -223,7 +223,7 @@ body.fade-out {
     /* Tab */
     .tab-area {
         width: 100%;
-        padding-bottom:6rem;
+        padding-bottom: 6rem;
     }
 
     .tab-list {
@@ -737,10 +737,10 @@ body.fade-out {
     .accident-status-wrap {
         margin-block: 2.4rem 3rem;
     }
-    .accident-status-tab{
-        display:flex;
-        gap:0.3rem;
-        margin-top:3rem;
+    .accident-status-tab {
+        display: flex;
+        gap: 0.3rem;
+        margin-top: 3rem;
     }
 
     .accident-status-tit {
@@ -909,7 +909,6 @@ body.fade-out {
         color: var(--a-txt-pri);
     }
 
-
     .svc-apply-btn {
         display: flex;
         width: 100%;
@@ -935,8 +934,6 @@ body.fade-out {
         border: 1px solid #ddd;
         cursor: not-allowed;
     }
-
-    
 }
 
 #type-b {
@@ -2179,9 +2176,16 @@ body.fade-out {
         font-weight: 500;
     }
     .progress-txt .progress-num {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
         font-size: 1.4rem;
         color: #999;
     }
+    .progress-txt .progress-num .averege {
+        font-size: 0.9rem;
+    }
+
     .main-tit span {
         color: #009ff2;
     }
@@ -2234,7 +2238,8 @@ body.fade-out {
         color: #333;
     }
     .main section.padding-01 {
-        background: radial-gradient(79.94% 79.94% at 12.36% 8.45%, #daeeff 36.54%, #add3ff 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        /* background: radial-gradient(79.94% 79.94% at 12.36% 8.45%, #daeeff 36.54%, #add3ff 100%); */
+        background-color: #f1f8fe;
     }
     .main section.padding-02 {
         background-color: #f7f8f8;
@@ -3694,8 +3699,8 @@ body.fade-out {
         justify-content: space-between;
         gap: 0 2rem;
     }
-    .intel-form li a{
-        width:100%;
+    .intel-form li a {
+        width: 100%;
     }
     .intel-form li .icon {
     }
