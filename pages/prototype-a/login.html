@@ -32,6 +32,11 @@
                     <li><a href="#" class="txt-pri weight-700">회원가입</a></li>
                 </ul>
             </div>
+            <!-- capcha 사용 시
+            <button data-callback="onSubmit" data-action="submit" data-sitekey="6Ld1rUAsAAAAAOYyja1DbVtQmypwHL5UlL0Vr38i" class="btn btn-pri w-100 flex-item-bottom fade-in fade-in-animate g-recaptcha">로그인</button>
+             -->
+
+            <!-- 미사용 시 -->
             <button type="submit" class="btn btn-pri w-100 flex-item-bottom fade-in fade-in-animate">로그인</button>
         </form>
         <div class="cert-loading">
@@ -71,6 +76,7 @@
                 <img class="intro-img" src="../../assets/images/intro-d-1.png" alt="" />
             </div>
         </div>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
         <script src="../../resources/js/jquery-3.7.1.min.js"></script>
         <script src="../../resources/js/swiper-bundle.min.js"></script>
         <script src="../../resources/js/gsap.min.js"></script>
@@ -131,6 +137,24 @@
 
             // Login Form Submit Event
             const loginForm = document.querySelector('#login-form');
+
+            function onSubmit(token) {
+                return;
+
+                // 2. 로딩 화면 표시
+                showLoading();
+
+                setTimeout(() => {
+                    $('.cert-loading').hide();
+                    showProgressLoading(20, 500, function () {
+                        window.location.href = './main.html';
+                    });
+                }, 1000);
+
+                // 1. 토큰이 정상적으로 생성되었는지 확인
+                console.log('reCAPTCHA Token:', token);
+            }
+
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault();
 
