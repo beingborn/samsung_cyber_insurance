@@ -269,14 +269,10 @@
                 },
                 {
                     "file": "search-1.html",
-                    "title": "검색 (입력 전)",
+                    "title": "검색",
                     "status": ""
                 },
-                {
-                    "file": "search-2.html",
-                    "title": "검색 (입력 후)",
-                    "status": ""
-                },
+
                 {
                     "file": "security-consulting-history.html",
                     "title": "보안컨설팅 진단이력",

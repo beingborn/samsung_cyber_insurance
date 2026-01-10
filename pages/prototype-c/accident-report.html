@@ -10,172 +10,38 @@
         <div id="wrap">
             <header id="header">
                 <div class="inner">
-                    <h1>
-                        <a href="./main.html"><img src="../../assets/images/logo/logo.svg" alt="삼성화재 사이버보험" /></a>
-                    </h1>
-                    <div class="d-flex items-center g-4">
-                        <a href="../gate/gate-main.html">
-                            <img src="../../assets/images/icon/ico_menu.svg" alt="" />
-                        </a>
-                        <button type="button">
-                            <img src="../../assets/images/icon/icon_find_pri.svg" alt="" />
-                        </button>
-                    </div>
+                    <h1 class="sub-header-tit">사고접수</h1>
+                    <button type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path
+                                d="M7.94975 8.94974C10.6834 6.21607 15.1156 6.21607 17.8492 8.94974C20.5829 11.6834 20.5829 16.1156 17.8492 18.8492C15.1156 21.5829 10.6834 21.5829 7.94975 18.8492C5.21608 16.1156 5.21608 11.6834 7.94975 8.94974ZM9.36396 10.364C7.41134 12.3166 7.41134 15.4824 9.36396 17.435C11.3166 19.3876 14.4824 19.3876 16.435 17.435C18.3877 15.4824 18.3877 12.3166 16.435 10.364C14.4824 8.41133 11.3166 8.41133 9.36396 10.364Z"
+                                fill="#222222"
+                            />
+                            <path d="M16.435 18.8492C16.0445 18.4587 16.0445 17.8255 16.435 17.435C16.8256 17.0445 17.4587 17.0445 17.8492 17.435L22.0919 21.6777C22.4824 22.0682 22.4824 22.7014 22.0919 23.0919C21.7014 23.4824 21.0682 23.4824 20.6777 23.0919L16.435 18.8492Z" fill="#222222" />
+                        </svg>
+                    </button>
                 </div>
             </header>
             <main id="container" class="sub min-h-screen">
-                <div id="sub-visual">
-                    <a href="#" class="sub-prev-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 15" fill="none">
-                            <path
-                                d="M0.292893 6.65666C-0.0976311 7.04719 -0.0976311 7.68035 0.292893 8.07088L6.65685 14.4348C7.04738 14.8254 7.68054 14.8254 8.07107 14.4348C8.46159 14.0443 8.46159 13.4111 8.07107 13.0206L2.41421 7.36377L8.07107 1.70692C8.46159 1.31639 8.46159 0.683226 8.07107 0.292702C7.68054 -0.0978227 7.04738 -0.0978227 6.65685 0.292702L0.292893 6.65666ZM23 8.36377C23.5523 8.36377 24 7.91605 24 7.36377C24 6.81148 23.5523 6.36377 23 6.36377V7.36377V8.36377ZM1 7.36377V8.36377H23V7.36377V6.36377H1V7.36377Z"
-                                fill="#666666"
-                            />
-                        </svg>
-                    </a>
-                    <img src="../../assets/images/accident_report_visual.png" alt="" />
-                </div>
-
-                <div class="inner">
-                    <div class="tab-area">
-                        <ul class="tab-list">
-                            <li>
-                                <button class="tab" aria-controls="tab-1">사이버사고 접수 현황</button>
-                            </li>
-                            <li>
-                                <button class="tab" aria-controls="tab-2">사고 이력</button>
-                            </li>
-                        </ul>
-                        <div class="tab-conts">
-                            <div class="tab-cont" id="tab-1">
-                                <div class="sub-card accident-status-wrap">
-                                    <div class="d-flex flex-col g-20">
-                                        <img class="w-100" src="../../assets/images/accident_summary_a.svg" alt="" />
-
-                                        <div class="detail-cont d-flex flex-col g-12 items-center fade-in">
-                                            <img class="floating-lg" src="../../assets/images/icon/icon_examine.svg" width="58" alt="" />
-                                            <p class="accident-status-tit">사고를 조사하고 있어요 ...</p>
-                                        </div>
-
-                                        <div class="d-flex justify-center">
-                                            <button type="button" class="detail-btn fixed-btn flex-item-center" id="origin-detail-btn">
-                                                <span>자세히</span>
-                                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        clip-rule="evenodd"
-                                                        d="M4.26464 8.40458C3.93623 8.70014 3.90959 9.20597 4.20515 9.53439L11.4049 17.5344C11.5566 17.703 11.7727 17.7992 11.9995 17.7992C12.2263 17.7992 12.4424 17.703 12.5941 17.5344L19.7946 9.53442C20.0902 9.20602 20.0636 8.70019 19.7352 8.40461C19.4068 8.10903 18.901 8.13564 18.6054 8.46403L11.9995 15.8034L5.39445 8.46407C5.09888 8.13565 4.59305 8.10902 4.26464 8.40458Z"
-                                                        fill="#333333"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </div>
-
-                                        <ol class="step-list row">
-                                            <li class="is-done">
-                                                <div class="step-cont fade-in ani-delay" style="--ani-delay: 0.8s">
-                                                    <span class="step-icon"></span>
-                                                    <p>접수</p>
-                                                </div>
-                                            </li>
-                                            <li class="is-done">
-                                                <div class="step-cont fade-in ani-delay" style="--ani-delay: 1.3s">
-                                                    <span class="step-icon"></span>
-                                                    <p>
-                                                        파트너사 <br />
-                                                        배정
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li class="is-curr">
-                                                <div class="step-cont fade-in ani-delay" style="--ani-delay: 1.8s">
-                                                    <span class="step-icon"></span>
-                                                    <p>조사</p>
-                                                </div>
-                                            </li>
-                                            <li class="">
-                                                <div class="step-cont fade-in ani-delay" style="--ani-delay: 2s">
-                                                    <span class="step-icon"></span>
-                                                    <p>종료</p>
-                                                </div>
-                                            </li>
-                                        </ol>
-
-                                        <ol class="step-list column fade-in detail-cont">
-                                            <li>
-                                                <div class="step-cont">
-                                                    <span class="step-icon"></span>
-                                                    <div class="step-txt">
-                                                        <strong>접수</strong>
-                                                        <span>2025.11.24</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="step-cont">
-                                                    <span class="step-icon"></span>
-                                                    <div class="step-txt">
-                                                        <strong>접수</strong>
-                                                        <span>2025.11.24</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="is-curr">
-                                                <div class="step-cont">
-                                                    <span class="step-icon"></span>
-                                                    <div class="step-txt">
-                                                        <strong>접수</strong>
-                                                        <span>2025.11.24</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ol>
-
-                                        <p class="detail-cont">해킹으로 인해 홈페이지 공격 당했으며, 회원가입한 고객 개인정보가 유출된 것으로 추정</p>
-                                        <div class="d-flex justify-center mt-40" id="hidden-detail-btn">
-                                            <button type="button" class="detail-btn fixed-btn flex-item-center" aria-controls="detail-1">
-                                                <span>닫기</span>
-                                                <svg class="arrow is-active" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        clip-rule="evenodd"
-                                                        d="M4.26464 8.40458C3.93623 8.70014 3.90959 9.20597 4.20515 9.53439L11.4049 17.5344C11.5566 17.703 11.7727 17.7992 11.9995 17.7992C12.2263 17.7992 12.4424 17.703 12.5941 17.5344L19.7946 9.53442C20.0902 9.20602 20.0636 8.70019 19.7352 8.40461C19.4068 8.10903 18.901 8.13564 18.6054 8.46403L11.9995 15.8034L5.39445 8.46407C5.09888 8.13565 4.59305 8.10902 4.26464 8.40458Z"
-                                                        fill="#333333"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-cont" id="tab-2">
-                                <div class="d-flex flex-col g-16">
-                                    <img class="w-100 fade-in" src="../../assets/images/accident_example_1.svg" alt="" />
-                                    <img class="w-100 fade-in" src="../../assets/images/accident_example_2.svg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-pri w-100 flex-item-bottom fade-in detail-cont">사고접수 신청</button>
-                </div>
-
-                <div class="inner d-flex flex-col flex-grow-1" style="display: none !important">
+                <img class="w-100" src="../../assets/images/tab_sub_a.svg" alt="" />
+                <div class="inner d-flex flex-col flex-grow-1">
+                    <img class="w-100 fade-in" src="../../assets/images/company_info_a.svg" alt="" />
                     <div class="sub-card accident-status-wrap">
                         <div class="d-flex flex-col g-20">
                             <div class="d-flex flex-col g-12 items-center fade-in">
-                                <img class="floating-lg" src="../../assets/images/icon/icon_examine.svg" width="58" alt="" />
+                                <img src="../../assets/images/icon/icon_examine.svg" width="58" alt="" />
                                 <p class="accident-status-tit">사고를 조사하고 있어요 ...</p>
                             </div>
 
-                            <ol class="step-list row">
+                            <ol class="step-list row fade-in">
                                 <li class="is-done">
-                                    <div class="step-cont fade-in ani-delay" style="--ani-delay: 0.8s">
+                                    <div class="step-cont">
                                         <span class="step-icon"></span>
                                         <p>접수</p>
                                     </div>
                                 </li>
                                 <li class="is-done">
-                                    <div class="step-cont fade-in ani-delay" style="--ani-delay: 1.3s">
+                                    <div class="step-cont">
                                         <span class="step-icon"></span>
                                         <p>
                                             파트너사 <br />
@@ -184,13 +50,13 @@
                                     </div>
                                 </li>
                                 <li class="is-curr">
-                                    <div class="step-cont fade-in ani-delay" style="--ani-delay: 1.8s">
+                                    <div class="step-cont">
                                         <span class="step-icon"></span>
                                         <p>조사</p>
                                     </div>
                                 </li>
-                                <li class="">
-                                    <div class="step-cont fade-in ani-delay" style="--ani-delay: 2s">
+                                <li>
+                                    <div class="step-cont">
                                         <span class="step-icon"></span>
                                         <p>종료</p>
                                     </div>
@@ -227,8 +93,9 @@
                             </ol>
                         </div>
 
-                        <img class="w-100" src="../../assets/images/accident_summary_a.svg" alt="" />
+                        <img class="w-100 fade-in" src="../../assets/images/accident_summary_a.svg" alt="" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0" />
                     </div>
+                    <button class="btn btn-pri w-100 flex-item-bottom" onclick="window.location.href='../sub/accident-history.html'">사고 접수</button>
                 </div>
             </main>
 
@@ -272,24 +139,5 @@
         <script src="../../resources/js/ScrollSmoother.js"></script>
         <script src="../../resources/js/ScrollTrigger.js"></script>
         <script src="../../resources/js/common.js"></script>
-
-        <script>
-            $('.detail-cont').addClass('is-hide');
-            $('#hidden-detail-btn').hide();
-
-            $('.detail-btn').on('click', function () {
-                $('.detail-cont').toggleClass('is-hide');
-
-                $(this).find('svg').toggleClass('is-active');
-
-                if ($(this).attr('id') == 'origin-detail-btn') {
-                    $('#origin-detail-btn').hide();
-                    $('#hidden-detail-btn').show();
-                } else {
-                    $('#hidden-detail-btn').hide();
-                    $('#origin-detail-btn').show();
-                }
-            });
-        </script>
     </body>
 </html>

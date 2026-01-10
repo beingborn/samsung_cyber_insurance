@@ -3827,3 +3827,27 @@ body.fade-out {
     height: 1.1rem;
     background-color: #f8f8f8;
 }
+
+.srch-input-wrap {
+    position: relative;
+}
+
+.srch-input {
+    width: 100%;
+    padding-left: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    height: 4.8rem;
+    background-color: #f8f8f8;
+    border-radius: 6rem;
+}
+
+.srch-right {
+    position: absolute;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
