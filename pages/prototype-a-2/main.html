@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>삼성화재 | 사이버보험 모바일 웹</title>
+        <link rel="stylesheet" href="../../resources/css/default.css" />
+        <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css" />
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    </head>
+    <body id="type-c" onload="">
+        <div id="wrap">
+            <header id="header">
+                <div class="inner">
+                    <h1>
+                        <a href="./main.html"><img src="../../assets/images/logo/logo.svg" alt="삼성화재 사이버보험" /></a>
+                    </h1>
+
+                    <div class="d-flex items-center g-4">
+                        <a href="../gate/gate-main.html">
+                            <img src="../../assets/images/icon/ico_menu.svg" alt="" />
+                        </a>
+                        <button type="button">
+                            <img src="../../assets/images/icon/icon_find_pri.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <main id="container" class="main">
+                <!-- 상단 모션 영역 -->
+                <div class="main-top-motion">
+                    <div id="animation_container" style="background-color: rgba(255, 255, 255, 1); width: 360px; height: 720px; margin: 0 auto; position: relative">
+                        <canvas id="canvas" width="360" height="720" style="position: absolute; display: block; background-color: rgba(255, 255, 255, 1); left: 0; top: 0"></canvas>
+                        <div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 360px; height: 720px; position: absolute; left: 0; top: 0; display: block"></div>
+                    </div>
+                    <div class="shield-txt">
+                        <span class="company-score counter" data-target="90" data-delay="300">0</span>
+                    </div>
+                </div>
+
+                <!-- Main Hero -->
+                <div class="main-hero">
+                    <h2 class="sr-only">메인 hero</h2>
+
+                    <div class="main-hero-wrap">
+                        <div class="barrior-wrap" style="display: none">
+                            <div class="barrior-circle-depth3"></div>
+                            <div class="barrior-circle-depth2"></div>
+                            <div class="barrior-circle-depth1"></div>
+
+                            <div class="shield-wrap">
+                                <div class="shield">
+                                    <div class="shield-txt">
+                                        <h2 class="company-name"><img src="../../assets/images/logo/logo_itpub.png" alt="" /></h2>
+                                        <span class="company-score counter" data-target="90"></span>
+                                    </div>
+                                    <div class="orbit-wrap" style="display: none">
+                                        <div class="orbit">
+                                            <div class="star" style="--ani-delay: 0s"></div>
+                                            <div class="star" style="--ani-delay: 1s"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="orbit-wrap mirror" style="display: none">
+                                        <div class="orbit">
+                                            <div class="star" style="--ani-delay: 0s"></div>
+                                            <div class="star" style="--ani-delay: 1s"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-report-card">
+                        <!-- 위험 성적표 -->
+                        <div class="main-tit-wrap inner justify-center">
+                            <div class="d-flex flex-col items-center g-5 fade-in ani-delay" style="--ani-delay: 0.2s">
+                                <h2 class="main-tit">기업 <span>위험 점수</span></h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="11" viewBox="0 0 19 11" fill="none">
+                                    <path d="M9.09375 10.5L0.00048157 1.94451e-07L18.187 1.78437e-06L9.09375 10.5Z" fill="#333333" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="inner progress-area fade-in ani-delay" style="--ani-delay: 0.1s">
+                            <div class="progress-wrap">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" data-target="97"></div>
+                                </div>
+                                <img src="../../assets/images/report_card_current.svg" alt="" />
+                            </div>
+                            <div class="progress-wrap">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" data-target="20"></div>
+                                </div>
+                                <img src="../../assets/images/report_card_current_2.svg" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- 보안 캘린더 -->
+                        <article style="background-color: #fff">
+                            <div class="main-tit-wrap inner">
+                                <h2 class="main-tit fade-in">1월의 <span>보안 캘린더</span></h2>
+                                <a href="#n" class="more-btn fade-in">전체보기</a>
+                            </div>
+                            <div class="security-calendar inner">
+                                <div class="swiper fade-in">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">목</div>
+                                            <div class="date">1</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 1</p>
+                                                <p>보안 감사 2</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">금</div>
+                                            <div class="date">2</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 3</p>
+                                                <p>보안 감사 4</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date is-active">
+                                            <div class="day">토</div>
+                                            <div class="date">3</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 5</p>
+                                                <p>보안 감사 6</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">일</div>
+                                            <div class="date">4</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 7</p>
+                                                <p>보안 감사 8</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">월</div>
+                                            <div class="date">5</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 9</p>
+                                                <p>보안 감사 10</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">화</div>
+                                            <div class="date">6</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 11</p>
+                                                <p>보안 감사 12</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">수</div>
+                                            <div class="date">7</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 13</p>
+                                                <p>보안 감사 14</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">목</div>
+                                            <div class="date">8</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 15</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">금</div>
+                                            <div class="date">9</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 16</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">토</div>
+                                            <div class="date">10</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 17</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">일</div>
+                                            <div class="date">11</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 18</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">월</div>
+                                            <div class="date">12</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 19</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">화</div>
+                                            <div class="date">13</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 20</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">수</div>
+                                            <div class="date">14</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 21</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">목</div>
+                                            <div class="date">15</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 22</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">금</div>
+                                            <div class="date">16</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 23</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">토</div>
+                                            <div class="date">17</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 24</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">일</div>
+                                            <div class="date">18</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 25</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">월</div>
+                                            <div class="date">19</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 26</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">화</div>
+                                            <div class="date">20</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 27</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">수</div>
+                                            <div class="date">21</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 28</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">목</div>
+                                            <div class="date">22</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 29</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">금</div>
+                                            <div class="date">23</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 30</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">토</div>
+                                            <div class="date">24</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 31</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">일</div>
+                                            <div class="date">25</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 32</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">월</div>
+                                            <div class="date">26</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 33</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">화</div>
+                                            <div class="date">27</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 34</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">수</div>
+                                            <div class="date">28</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 35</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">목</div>
+                                            <div class="date">29</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 36</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">금</div>
+                                            <div class="date">30</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 37</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide security-date">
+                                            <div class="day">토</div>
+                                            <div class="date">31</div>
+                                            <div class="security-schedule">
+                                                <p>보안 감사 38</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="security-calendar-detail-wrap fade-in">
+                                <div class="security-calendar-tail"></div>
+                                <div class="security-calendar-detail inner"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Main Status -->
+                <section class="main-status">
+                    <div class="inner">
+                        <div class="tab-area">
+                            <ul class="tab-list fade-in">
+                                <li>
+                                    <button class="tab" type="button" aria-controls="score-type">보장 점수 & 재정적 추정 손실</button>
+                                    <!-- <button class="tab" type="button" aria-controls="financial">재정적 추정 손실</button> -->
+                                </li>
+                                <li>
+                                    <button class="tab" type="button" aria-controls="darkweb">다크웹 노출</button>
+                                </li>
+                            </ul>
+                            <div class="tab-conts">
+                                <div class="tab-cont d-flex mt-30" id="score-type">
+                                    <ul class="progress-box-list">
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">금전절도 및 사기</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">사이버갈취</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">데이터 손실</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">업무 차질</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-cont d-flex mt-30" id="darkweb">
+                                    <ul class="progress-box-list fade-in">
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">금전절도 및 사기</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">사이버갈취</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">데이터 손실</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="progress-box-item">
+                                            <div class="progress-box">
+                                                <strong class="progress-box-tit">업무 차질</strong>
+                                                <div class="progress-ratio">
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_01.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">보장 유형 점수</p>
+                                                            <p class="progress-num"><span class="color-red">45</span>/<span>49</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress-info">
+                                                        <div class="progress-img">
+                                                            <img src="../../assets/images/icon/ico_dummy_02.svg" alt="" />
+                                                        </div>
+                                                        <div class="progress-txt">
+                                                            <p class="progress-tit">재정적 추정 손실</p>
+                                                            <p class="progress-num">
+                                                                <span class="color-blue">1.1억~3.8억</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="main-tit-wrap inner fade-in">
+                        <h2 class="main-tit">서비스 <span>바로가기</span></h2>
+                        <a href="#n" class="more-btn">전체보기</a>
+                    </div>
+                    <div class="service-quick-list-swiper fade-in">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../../assets/images/slide_img_01.png" alt="" />
+                                    <!-- <strong>이번주 주의해야 할 공격 취약점 리포트</strong>
+                                    <p>최신 랜섬웨어 변종, 긴급 패치 지금 바로 확인하세요.</p> -->
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../assets/images/slide_img_01.png" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../assets/images/slide_img_01.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <ul class="service-quick-list fade-in">
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_04.svg" alt="" />
+                                    </div>
+                                    <span>외부망 보안점검</span>
+                                </a>
+                            </li>
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_04.svg" alt="" />
+                                    </div>
+                                    <span>악성메일 모의훈련</span>
+                                </a>
+                            </li>
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_08.svg" alt="" />
+                                    </div>
+                                    <span>취약점 자동진단</span>
+                                </a>
+                            </li>
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_09.svg" alt="" />
+                                    </div>
+                                    <span>다크웹 모니터링</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="padding-01">
+                    <div class="inner">
+                        <div class="main-tit-wrap fade-in">
+                            <h2 class="main-tit">보안 <span>컨설팅</span></h2>
+                        </div>
+                        <ul class="security-cunsulting-list fade-in">
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_01.svg" alt="" />
+                                    </div>
+                                    <span>워크숍</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_02.svg" alt="" />
+                                    </div>
+                                    <span>웨비나</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_03.svg" alt="" />
+                                    </div>
+                                    <span>로드맵 개발</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_04.svg" alt="" />
+                                    </div>
+                                    <span>도상훈련</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_05.svg" alt="" />
+                                    </div>
+                                    <span>모니터링</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_06.svg" alt="" />
+                                    </div>
+                                    <span>모의해킹</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_07.svg" alt="" />
+                                    </div>
+                                    <span>보완관제</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_08.svg" alt="" />
+                                    </div>
+                                    <span>전체서비스</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="inner">
+                        <div class="main-tit-wrap fade-in">
+                            <h2 class="main-tit">인텔리전스 <span>보고서</span></h2>
+                            <a href="#n" class="more-btn">전체보기</a>
+                        </div>
+                        <ul class="intel-form">
+                            <li class="fade-in">
+                                <div class="icon">
+                                    <img src="../../assets/images/icon/ico_dummy_05.svg" alt="" />
+                                </div>
+                                <div class="intel-form-txt">
+                                    <p>2026.01</p>
+                                    <h4>물류사 이메일 해킹해 '가짜 화물 공고'...</h4>
+                                    <span class="txt-01">정기</span>
+                                </div>
+                            </li>
+                            <li class="fade-in">
+                                <div class="icon">
+                                    <img src="../../assets/images/icon/ico_dummy_06.svg" alt="" />
+                                </div>
+                                <div class="intel-form-txt">
+                                    <p>2026.01</p>
+                                    <h4>12월 랜섬웨어 동향 보고서</h4>
+                                    <span class="txt-02">월간</span>
+                                </div>
+                            </li>
+                            <li class="fade-in">
+                                <div class="icon">
+                                    <img src="../../assets/images/icon/ico_dummy_07.svg" alt="" />
+                                </div>
+                                <div class="intel-form-txt">
+                                    <p>2026.01</p>
+                                    <h4>12월 피싱 동향 보고서</h4>
+                                    <span class="txt-03">주간</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="padding-02">
+                    <div class="inner">
+                        <div class="main-tit-wrap fade-in">
+                            <h2 class="main-tit">보안 소식</h2>
+                            <a href="#n" class="more-btn">전체보기</a>
+                        </div>
+                        <div class="secu-form fade-in">
+                            <div class="swiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <div class="secu-form-tit">
+                                            <span class="tit-news">NEWS</span>
+                                            <span class="txt-num">2026.01.06</span>
+                                        </div>
+                                        <div class="secu-form-img">
+                                            <img src="../../assets/images/dummy_01.png" alt="" />
+                                        </div>
+                                        <div class="secu-form-txt">
+                                            <p>"목소리까지 똑같네"...2026년형 AI 딥보이스피싱 주의보</p>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <div class="secu-form-tit">
+                                            <span class="tit-news">NEWS</span>
+                                            <span class="txt-num">2026.01.06</span>
+                                        </div>
+                                        <div class="secu-form-img">
+                                            <img src="../../assets/images/dummy_01.png" alt="" />
+                                        </div>
+                                        <div class="secu-form-txt">
+                                            <p>"목소리까지 똑같네"...2026년형 AI 딥보이스피싱 주의보</p>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <div class="secu-form-tit">
+                                            <span class="tit-news">NEWS</span>
+                                            <span class="txt-num">2026.01.06</span>
+                                        </div>
+                                        <div class="secu-form-img">
+                                            <img src="../../assets/images/dummy_01.png" alt="" />
+                                        </div>
+                                        <div class="secu-form-txt">
+                                            <p>"목소리까지 똑같네"...2026년형 AI 딥보이스피싱 주의보</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer id="footer">
+                    <img src="../../assets/images/footer_c.png" alt="" />
+                </footer>
+            </main>
+            <nav id="bottom-nav">
+                <ul class="bottom-nav-list">
+                    <li class="is-active">
+                        <a href="../prototype-c/main.html">
+                            <img src="../../assets/images/icon/ico_home_active.svg" alt="" />
+                            <span>홈</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/accident-report.html">
+                            <img src="../../assets/images/icon/ico_accident_report.svg" alt="" />
+                            <span>사고접수</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/service-apply.html">
+                            <img src="../../assets/images/icon/ico_service_apply.svg" alt="" />
+                            <span>서비스신청</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/report-list.html">
+                            <img src="../../assets/images/icon/ico_report.svg" alt="" />
+                            <span>보고서</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/my-page.html">
+                            <img src="../../assets/images/icon/ico_my.svg" alt="" />
+                            <span>마이</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <script src="../../resources/js/jquery-3.7.1.min.js"></script>
+        <script src="../../resources/js/jquery.ui.min.js"></script>
+        <script src="../../resources/js/swiper-bundle.min.js"></script>
+        <script src="../../resources/js/progressbar.js"></script>
+        <script src="../../resources/js/gsap.min.js"></script>
+        <script src="../../resources/js/ScrollSmoother.js"></script>
+        <script src="../../resources/js/ScrollTrigger.js"></script>
+        <script src="../../resources/js/popper.min.js"></script>
+        <script src="../../resources/js/bootstrap.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+        <script>
+            $(function () {
+                $('.progress-box-item').addClass('fade-in').css('--ani-delay', '0.2s');
+
+                const barriors = document.querySelectorAll('[class^="barrior-circle"]');
+
+                function playOnce() {
+                    barriors.forEach((barrior) => {
+                        barrior.classList.remove('run');
+
+                        // Reflow 강제
+                        void barrior.offsetWidth;
+
+                        barrior.classList.add('run');
+                    });
+                }
+
+                playOnce();
+
+                // Tooltip Activate
+                $('[data-toggle="tooltip" ]').tooltip();
+
+                $('[data-toggle="tooltip" ]').tooltip({
+                    trigger: 'click focus',
+                });
+
+                // Progress
+                $('.progress-bar').each(function (i, el) {
+                    let value = 0;
+
+                    const targetPercent = Number($(this).attr('data-target'));
+
+                    setTimeout(() => {
+                        const timer = setInterval(() => {
+                            value++;
+
+                            $(this).css('height', `${value}%`);
+
+                            if (value >= targetPercent) {
+                                clearInterval(timer);
+                            }
+                        }, 10);
+                    }, 1000);
+                });
+
+                // 보안 캘린더
+                const securityCalendarSwiper = new Swiper('.security-calendar .swiper', {
+                    slidesPerView: '7',
+                    centeredSlides: true,
+                    freeMode: {
+                        enabled: true,
+                        momentum: true,
+                    },
+                    touchStartPreventDefault: false,
+                    observer: true,
+                    observeParents: true,
+                });
+
+                $('.security-calendar .swiper').css({
+                    touchAction: 'pan-x',
+                    overflow: 'auto',
+                });
+
+                function initCalendar() {
+                    const day = new Date().getDate();
+
+                    $('.security-date .day').each(function (idx, el) {
+                        if ($(el).text() == '토') {
+                            $(el).next().addClass('sat');
+                        } else if ($(el).text() == '일') {
+                            $(el).next().addClass('sun');
+                        }
+                    });
+
+                    $('.security-date .date').each(function (idx, el) {
+                        if ($(el).text() == day) {
+                            $(el).click();
+                        }
+                    });
+                }
+
+                let prevActiveIndex;
+
+                $('.security-date .date').click(function () {
+                    $(this).parent().siblings().removeClass('is-active');
+                    $(this).parent().addClass('is-active');
+
+                    const slidesPerView = 7;
+                    const half = Math.floor(slidesPerView / 2);
+                    const total = securityCalendarSwiper.slides.length;
+
+                    const minIndex = half;
+                    const maxIndex = total - half - 1;
+                    const index = $(this).parent().index();
+
+                    /* == 클릭 요소 인덱스 별 캘린더 꼬리 중앙 이동 == */
+                    const containerLeft = $(this).closest('.swiper')[0].getBoundingClientRect().left;
+                    const tailHalfWidth = $('.security-calendar-tail').innerWidth() / 2;
+                    const targetHalfWidth = $(this).innerWidth() / 2;
+
+                    let targetLeft = $(this)[0].getBoundingClientRect().left;
+                    let targetMiddle;
+
+                    targetMiddle = targetLeft + containerLeft - targetHalfWidth + tailHalfWidth;
+
+                    prevActiveIndex = index;
+
+                    if (index < minIndex) {
+                        $(this).closest('.swiper-wrapper').css('transform', 'translate3d(0px, 0px, 0px)');
+                    } else if (index > maxIndex) {
+                        targetMiddle = targetLeft - targetHalfWidth + tailHalfWidth;
+                    } else {
+                        securityCalendarSwiper.slideTo(index, 300);
+
+                        targetMiddle = 16 + $(this).closest('.swiper').innerWidth() / 2 - tailHalfWidth;
+                    }
+
+                    $('.security-calendar-tail').css('transform', `translateX(${targetMiddle}px)`);
+
+                    /* == 클릭 요소 스케줄 바인딩 == */
+                    let clickedDate = $(this).html().toString().padStart(2, '0');
+                    let htmlContent = '';
+
+                    // 클릭 요소 flip-x로 나가게 만들기, 기존 flip-x-reverse 지움
+                    $('.security-calendar-detail p').removeClass('flip-x-reverse').addClass('flip-x');
+
+                    // 애니메이션 트랜지션 종료 후 새로운 요소로 갈아치움
+                    setTimeout(() => {
+                        $(this)
+                            .siblings('.security-schedule')
+                            .find('p')
+                            .each(function (idx, el) {
+                                let schedule = $(el).html();
+                                htmlContent += `<p class="flip-x-reverse">${schedule} <span>01.${clickedDate}</span></p>`;
+                            });
+
+                        $('.security-calendar-detail').html(htmlContent);
+                    }, 500);
+                });
+
+                initCalendar();
+
+                $('.range-bar').each(function (idx, el) {
+                    const min = Number($(this).attr('data-min'));
+                    const max = Number($(this).attr('data-max'));
+                    const total = Number($(this).attr('data-total'));
+
+                    const startPercent = (min / total) * 100;
+                    const endPercent = ((max - min) / total) * 100;
+
+                    $(this)
+                        .find('.range-fill')
+                        .css({
+                            left: startPercent + '%',
+                            width: endPercent + '%',
+                        });
+                });
+
+                let serviceQuickListSwiper = new Swiper('.service-quick-list-swiper .swiper', {
+                    slidesPerView: 1.2,
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        // type: "progressbar",
+                    },
+                    // on: {
+                    //     init: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //     },
+                    //     reachBeginning: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //         swiper.el.style.paddingRight = '0';
+                    //     },
+                    //     reachEnd: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '0';
+                    //         swiper.el.style.paddingRight = '16px';
+                    //     },
+                    // },
+                });
+
+                let securitySwiper = new Swiper('.secu-form .swiper', {
+                    slidesPerView: 1.2,
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        // type: "progressbar",
+                    },
+                    // on: {
+                    //     init: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //     },
+                    //     reachBeginning: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //         swiper.el.style.paddingRight = '0';
+                    //     },
+                    //     reachEnd: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '0';
+                    //         swiper.el.style.paddingRight = '16px';
+                    //     },
+                    // },
+                });
+
+                let bottomBannerSwiper = new Swiper('.bottom-banner .swiper', {
+                    slidesPerView: 1,
+                    observeParents: true,
+                    observer: true,
+                    pagination: {
+                        el: '.bottom-banner .swiper-pagination',
+                        type: 'fraction',
+                    },
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    on: {
+                        init: function (swiper) {
+                            if (swiper.autoplay.running) {
+                                $(swiper.el).parent().find('.swiper-button-play').hide();
+                            } else {
+                                $(swiper.el).parent().find('.swiper-button-hide').hide();
+                            }
+                        },
+                    },
+                });
+            });
+        </script>
+
+        <script src="../../motions/main-shield/top_motion.js"></script>
+        <script>
+            // Adobe Animate 상단 모션 초기화
+
+            var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
+            function initTopMotion() {
+                canvas = document.getElementById('canvas');
+                anim_container = document.getElementById('animation_container');
+                dom_overlay_container = document.getElementById('dom_overlay_container');
+
+                if (!canvas || !anim_container || !dom_overlay_container || typeof AdobeAn === 'undefined') return;
+
+                var comp = AdobeAn.getComposition('DD8E8EDB82AA6040BAED88450537C171');
+                if (!comp) return;
+
+                var lib = comp.getLibrary();
+                var loader = new createjs.LoadQueue(false);
+                loader.addEventListener('fileload', function (evt) {
+                    handleFileLoadTop(evt, comp);
+                });
+                loader.addEventListener('complete', function (evt) {
+                    handleCompleteTop(evt, comp);
+                });
+                // main.html 기준 경로 설정
+                loader.loadManifest(lib.properties.manifest, true, '../../motions/main-shield/');
+            }
+
+            function handleFileLoadTop(evt, comp) {
+                var images = comp.getImages();
+                if (evt && evt.item.type === 'image') {
+                    images[evt.item.id] = evt.result;
+                }
+            }
+
+            function handleCompleteTop(evt, comp) {
+                var lib = comp.getLibrary();
+                var ss = comp.getSpriteSheet();
+                var queue = evt.target;
+                var ssMetadata = lib.ssMetadata;
+                for (var i = 0; i < ssMetadata.length; i++) {
+                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                        images: [queue.getResult(ssMetadata[i].name)],
+                        frames: ssMetadata[i].frames,
+                    });
+                }
+                exportRoot = new lib.top_motion();
+                stage = new lib.Stage(canvas);
+
+                fnStartAnimation = function () {
+                    stage.addChild(exportRoot);
+                    createjs.Ticker.framerate = lib.properties.fps;
+                    createjs.Ticker.addEventListener('tick', stage);
+                };
+
+                AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
+                AdobeAn.compositionLoaded(lib.properties.id);
+                fnStartAnimation();
+            }
+
+            window.addEventListener('load', initTopMotion);
+        </script>
+    </body>
+</html>

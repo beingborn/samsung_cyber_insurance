@@ -6,370 +6,822 @@
         <title>삼성화재 | 사이버보험 모바일 웹</title>
         <link rel="stylesheet" href="../../resources/css/default.css" />
         <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css" />
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
     </head>
-    <body id="type-a">
+    <body id="type-d" onload="">
         <div id="wrap">
-            <div class="smoother-wrapper">
-                <div class="smoother-content">
-                    <header id="header">
-                        <div class="inner">
-                            <h1><img src="../../assets/images/logo/logo.svg" alt="삼성화재 사이버보험" /></h1>
-                            <button type="button">
-                                <img src="../../assets/images/icon/icon_find_pri.svg" alt="" />
-                            </button>
-                        </div>
-                    </header>
-                    <main id="container">
-                        <!-- Main Hero -->
-                        <section class="main-hero">
-                            <div class="swiper-container hero-banner-list">
-                                <div class="swiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="hero-banner">
-                                                <div class="hero-banner-inner">
-                                                    <div class="hero-banner-txt">
-                                                        <p class="hero-banner-desc">내 보험 괜찮은 걸까?</p>
-                                                        <strong class="hero-banner-tit">AI 보장분석 이벤트</strong>
-                                                    </div>
-                                                    <img src="../../assets/images/icon/icon_banner_01.png" alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="hero-banner">
-                                                <div class="hero-banner-inner">
-                                                    <div class="hero-banner-txt">
-                                                        <p class="hero-banner-desc">내 보험 괜찮은 걸까?2</p>
-                                                        <strong class="hero-banner-tit">AI 보장분석 이벤트</strong>
-                                                    </div>
-                                                    <img src="../../assets/images/icon/icon_banner_01.png" alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="hero-banner">
-                                                <div class="hero-banner-inner">
-                                                    <div class="hero-banner-txt">
-                                                        <p class="hero-banner-desc">내 보험 괜찮은 걸까?3</p>
-                                                        <strong class="hero-banner-tit">AI 보장분석 이벤트</strong>
-                                                    </div>
-                                                    <img src="../../assets/images/icon/icon_banner_01.png" alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-indicator">
-                                    <div class="swiper-pagination"></div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Company Summary -->
-                        <div class="company-summary">
-                            <div class="inner">
-                                <img class="w-100" src="../../assets/images/company_summary.svg" alt="" />
-                            </div>
-                        </div>
-                        <!-- Main Risk Overview -->
-                        <section class="main-risk-overview">
-                            <div class="inner">
-                                <div class="d-flex justify-between items-center mt-20">
-                                    <div class="circle-wrap">
-                                        <div class="circle-container-sm" id="circle-container" style="position: relative"></div>
-                                    </div>
-                                    <div class="risk-overview-txt">
-                                        <p class="fs-18 weight-500">기업 위험 점수</p>
-                                        <strong class="txt-pri counter" data-target="80"></strong>
-                                        <small class="txt-txt-thr">(동종업계 평균: 49)</small>
-                                    </div>
-                                </div>
-                                <div class="card card-bg-gray mt-20 fade-in">
-                                    <div class="risk-status">
-                                        <p class="risk-status-year-percent">12개월 내 사고 발생활률: <strong class="weight-500">2.49%</strong></p>
-                                        <p class="risk-status-same-average">
-                                            동종업계 평균 대비 <strong class="txt-pri weight-700">1.66배</strong> 높음
-                                            <svg class="floating" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
-                                                <rect x="5" y="8" width="4" height="10" rx="2" fill="#2C67F6" />
-                                                <path d="M6.13397 1.5C6.51887 0.833333 7.48113 0.833333 7.86603 1.5L12.1962 9C12.5811 9.66667 12.0999 10.5 11.3301 10.5H2.66987C1.90007 10.5 1.41895 9.66667 1.80385 9L6.13397 1.5Z" fill="#2C67F6" />
-                                            </svg>
-                                        </p>
-                                        <button class="btn btn-outline btn-dark btn-fixed" type="button">위험지표 확인</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Main Status -->
-                        <section class="main-status mt-30">
-                            <img class="w-100 inner" src="../../assets/images/tab_main_a.svg" alt="" />
-                            <div class="d-flex mt-30 inner">
-                                <img class="flex-item-right" src="../../assets/images/radio_main_a.svg" alt="" />
-                            </div>
-                            <div class="main-status-sections mt-10">
-                                <div class="main-status-section fade-in">
-                                    <h3>금전 절도 및 사기</h3>
-                                    <div class="status-line-container">
-                                        <div class="status-trail"></div>
-
-                                        <!-- Value가 긴 요소가 앞에 -->
-                                        <div class="status-inner">
-                                            <div class="status-line" id="line2"></div>
-                                        </div>
-                                        <div class="status-inner">
-                                            <div class="status-line" id="line1"></div>
-                                        </div>
-                                        <div class="status-handler-wrap" id="line1-handler">
-                                            <span class="status-handle-num">0</span>
-                                            <span class="status-handle"></span>
-                                        </div>
-                                        <div class="status-handler-wrap" id="line2-handler">
-                                            <span class="status-handle-num">0</span>
-                                            <span class="status-handle"></span>
-                                        </div>
-                                    </div>
-                                    <div class="status-range">
-                                        <span class="status-start">0</span>
-                                        <span class="status-end">100</span>
-                                    </div>
-                                    <!-- <progress class="progress" value="22" max="100"></progress> -->
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>사이버갈취</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>데이터 손실</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>업무 차질</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>사고 대응</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>규제 및 방어</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>개인정보의 침해</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                                <div class="main-status-section fade-in">
-                                    <h3>제3자 배상책임</h3>
-                                    <progress class="progress" value="22" max="100"></progress>
-                                </div>
-                            </div>
-                        </section>
-                    </main>
-                    <footer id="footer">
-                        <img class="w-100" src="../../assets/images/footer_a.svg" alt="" />
-                    </footer>
+            <header id="header">
+                <div class="inner">
+                    <h1>
+                        <a href="./main.html"><img src="../../assets/images/logo/logo.svg" alt="삼성화재 사이버보험" /></a>
+                    </h1>
+                    <div class="d-flex items-center g-4">
+                        <a href="../gate/gate-main.html">
+                            <img src="../../assets/images/icon/ico_menu.svg" alt="" />
+                        </a>
+                        <button type="button">
+                            <img src="../../assets/images/icon/icon_find_pri.svg" alt="" />
+                        </button>
+                    </div>
                 </div>
-                <nav id="bottom-nav">
-                    <ul class="bottom-nav-list">
-                        <li class="is-active">
-                            <a href="main.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 26 28" fill="none">
-                                    <path d="M1.3 8.27273L11.05 0.636364C11.7 0.127273 11.7 0 13 0V19.0909H11.05C9.75 19.0909 9.1 20.3636 9.1 21.6364V26.7273C9.1 27.7455 8.23333 28 7.8 28H1.3C0.78 28 0 27.3636 0 26.0909V10.8182C0 9.54545 0.65 8.90909 1.3 8.27273Z" fill="#0068FF" />
-                                    <path d="M24.7 8.27273L14.95 0.636364C14.3 0.127273 14.3 0 13 0V19.0909H14.95C16.25 19.0909 16.9 20.3636 16.9 21.6364V26.7273C16.9 27.7455 17.7667 28 18.2 28H24.7C25.22 28 26 27.3636 26 26.0909V10.8182C26 9.54545 25.35 8.90909 24.7 8.27273Z" fill="#0068FF" />
-                                </svg>
-                                <span>홈</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="accident-report.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none">
-                                    <g clip-path="url(#clip0_337_2376)">
-                                        <path d="M17.466 0H4.69306C2.10115 0 0 2.14701 0 4.79548V23.2045C0 25.853 2.10115 28 4.69306 28H17.466C20.0579 28 22.159 25.853 22.159 23.2045V4.79548C22.159 2.14701 20.0579 0 17.466 0Z" fill="#98A1B5" />
-                                        <path d="M16.2585 8.89379H5.90056C5.30579 8.89379 4.82324 8.40071 4.82324 7.79297C4.82324 7.18522 5.30579 6.69214 5.90056 6.69214H16.2585C16.8533 6.69214 17.3358 7.18522 17.3358 7.79297C17.3358 8.40071 16.8533 8.89379 16.2585 8.89379Z" fill="white" />
-                                        <path d="M16.2585 13.765H5.90056C5.30579 13.765 4.82324 13.2719 4.82324 12.6642C4.82324 12.0564 5.30579 11.5634 5.90056 11.5634H16.2585C16.8533 11.5634 17.3358 12.0564 17.3358 12.6642C17.3358 13.2719 16.8533 13.765 16.2585 13.765Z" fill="white" />
-                                        <path d="M10.0771 18.6384H5.90251C5.30774 18.6384 4.8252 18.1453 4.8252 17.5376C4.8252 16.9298 5.30774 16.4368 5.90251 16.4368H10.0771C10.6719 16.4368 11.1544 16.9298 11.1544 17.5376C11.1544 18.1453 10.6719 18.6384 10.0771 18.6384Z" fill="white" />
-                                        <path
-                                            d="M22.2656 8.95483C23.0273 8.17661 24.2696 8.17655 25.0312 8.95483L27.9307 11.9177L28.7627 12.7673H28.4199C28.6082 13.436 28.4446 14.1865 27.9287 14.7136L21.2656 21.5222L20.4082 22.3982V22.3923L19.9971 22.8132C19.7995 23.0309 19.5416 23.2012 19.2275 23.2878H19.2266L14.625 24.5457L14.626 24.5466C13.4013 24.8839 12.3189 23.7389 12.6357 22.5339L13.8682 17.8328L13.8691 17.8308C13.9597 17.4914 14.1426 17.2132 14.3818 17.0066L20.7275 10.5251L22.2656 8.95483Z"
-                                            fill="#98A1B5"
-                                            stroke="white"
-                                        />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_337_2376">
-                                            <rect width="28" height="28" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <span>사고접수</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none">
-                                    <g clip-path="url(#clip0_337_2384)">
-                                        <path
-                                            d="M14 0C19.6506 6.23671e-05 24.2471 4.41614 24.2471 9.84473V17.2754C24.2471 20.1358 23.7192 22.411 22.6777 24.0371C21.3665 26.0831 19.2985 27.121 16.5342 27.1211H15.71C15.3414 27.6509 14.7131 28 14 28C12.8652 27.9998 11.9453 27.1156 11.9453 26.0254C11.9455 24.9353 12.8653 24.0519 14 24.0518C14.7132 24.0518 15.3414 24.4008 15.71 24.9307H16.5342C18.4813 24.9306 19.8558 24.2616 20.7363 22.8887C21.5534 21.6143 21.9678 19.7252 21.9678 17.2764V9.8457C21.9677 5.62577 18.3935 2.19238 14.001 2.19238C9.6085 2.19247 6.03422 5.62582 6.03418 9.8457V19.4082H3.75391V9.8457C3.75267 4.41589 8.34934 0 14 0Z"
-                                            fill="#98A1B5"
-                                        />
-                                        <path d="M7.33828 13.647C7.33828 11.7002 5.69555 10.1221 3.66914 10.1221C1.64273 10.1221 0 11.7002 0 13.647V18.5291C0 20.4759 1.64273 22.0541 3.66914 22.0541C5.69555 22.0541 7.33828 20.4759 7.33828 18.5291V13.647Z" fill="#98A1B5" />
-                                        <path d="M28.0004 13.647C28.0004 11.7002 26.3577 10.1221 24.3312 10.1221C22.3048 10.1221 20.6621 11.7002 20.6621 13.647V18.5291C20.6621 20.4759 22.3048 22.0541 24.3312 22.0541C26.3577 22.0541 28.0004 20.4759 28.0004 18.5291V13.647Z" fill="#98A1B5" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_337_2384">
-                                            <rect width="28" height="28" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <span>서비스신청</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="24" viewBox="0 0 22 28" fill="none">
-                                    <g clip-path="url(#clip0_337_2393)">
-                                        <path d="M20 4H2C0.89543 4 0 4.89543 0 6V26C0 27.1046 0.89543 28 2 28H20C21.1046 28 22 27.1046 22 26V6C22 4.89543 21.1046 4 20 4Z" fill="#98A1B5" />
-                                        <path d="M11 -0.498535C12.4288 -0.498514 13.5977 0.675998 13.5977 2.13721V2.71338H18.0391V4.40771C18.0391 6.07266 16.7062 7.41346 15.0762 7.41357H6.92285C5.29271 7.41357 3.95996 6.07274 3.95996 4.40771V2.71338H8.40234V2.13721C8.40234 0.675985 9.57119 -0.498535 11 -0.498535Z" fill="#98A1B5" stroke="white" />
-                                        <path d="M16.8967 12.541H8.83398V14.7005H16.8967V12.541Z" fill="white" />
-                                        <path d="M7.36218 12.541H5.10352V14.7005H7.36218V12.541Z" fill="white" />
-                                        <path d="M16.8967 16.5981H8.83398V18.7576H16.8967V16.5981Z" fill="white" />
-                                        <path d="M7.36218 16.5981H5.10352V18.7576H7.36218V16.5981Z" fill="white" />
-                                        <path d="M16.8967 20.6538H8.83398V22.8133H16.8967V20.6538Z" fill="white" />
-                                        <path d="M7.36218 20.6538H5.10352V22.8133H7.36218V20.6538Z" fill="white" />
-                                        <path d="M12.0848 2.27934C12.1947 1.67301 11.7981 1.09135 11.1991 0.980178C10.6001 0.869004 10.0255 1.27041 9.91566 1.87674C9.80583 2.48308 10.2024 3.06473 10.8014 3.17591C11.4004 3.28708 11.975 2.88567 12.0848 2.27934Z" fill="white" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_337_2393">
-                                            <rect width="22" height="28" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <span>보고서</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 30 28" fill="none">
-                                    <g clip-path="url(#clip0_337_2408)">
-                                        <path d="M15 13.1998C18.6271 13.1998 21.5675 10.2449 21.5675 6.59988C21.5675 2.95487 18.6271 0 15 0C11.373 0 8.43262 2.95487 8.43262 6.59988C8.43262 10.2449 11.373 13.1998 15 13.1998Z" fill="#98A1B5" />
-                                        <path
-                                            d="M20.1485 14.1931C20.1485 14.1931 17.62 15.787 14.9964 15.8431C12.376 15.787 9.84421 14.1931 9.84421 14.1931C-1.25802 16.5328 -0.157978 25.5515 0.216366 26.5679C0.791015 28.1189 2.67915 27.9968 2.67915 27.9968H27.3201C27.3201 27.9968 29.2083 28.1156 29.7829 26.5679C30.1573 25.5548 31.2606 16.5328 20.1518 14.1931H20.1485Z"
-                                            fill="#98A1B5"
-                                        />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_337_2408">
-                                            <rect width="30" height="28" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <span>마이</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            </header>
+            <main id="container" class="main">
+                <div class="main-top-motion">
+                    <img class="main-top-txt" src="../../assets/images/a2-main-txt.svg" alt="" />
+
+                    <div class="shield-wrap">
+                        <div class="shield-inner">
+                            <img src="../../assets/images/a2-main-shield.svg" width="197" height="220" alt="" />
+                            <p class="shield-count counter" data-target="90">0</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Hero -->
+                <section class="main-hero">
+                    <div class="inner">
+                        <h2 class="sr-only">메인 hero</h2>
+                        <div class="card card-bg-gray fade-in">
+                            <div class="risk-status">
+                                <p class="risk-status-year-percent" style="color: #666">사고 발생활률: <strong class="weight-500">2.49%</strong></p>
+                                <p class="risk-status-same-average">
+                                    동종업계 평균 대비 <strong class="txt-pri weight-700">&nbsp;1.66배&nbsp;</strong> 높음
+                                    <svg class="floating" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                                        <rect x="5" y="8" width="4" height="10" rx="2" fill="#2C67F6" />
+                                        <path d="M6.13397 1.5C6.51887 0.833333 7.48113 0.833333 7.86603 1.5L12.1962 9C12.5811 9.66667 12.0999 10.5 11.3301 10.5H2.66987C1.90007 10.5 1.41895 9.66667 1.80385 9L6.13397 1.5Z" fill="#2C67F6" />
+                                    </svg>
+                                </p>
+                                <button class="btn btn-outline btn-dark btn-fixed" type="button">위험지표 확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 1월의 보안 캘린더 -->
+                <section class="fade-in">
+                    <div class="main-tit-wrap inner">
+                        <h2 class="main-tit">1월의 보안 캘린더</h2>
+                        <a href="#" class="more-btn">전체보기</a>
+                    </div>
+                    <div class="security-calendar inner">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide security-date">
+                                    <div class="day">목</div>
+                                    <div class="date purple">1</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 1</p>
+                                        <p>보안 감사 2</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">금</div>
+                                    <div class="date purple">2</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 3</p>
+                                        <p>보안 감사 4</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date is-active">
+                                    <div class="day">토</div>
+                                    <div class="date blue">3</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 5</p>
+                                        <p>보안 감사 6</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">일</div>
+                                    <div class="date purple">4</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 7</p>
+                                        <p>보안 감사 8</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">월</div>
+                                    <div class="date blue">5</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 9</p>
+                                        <p>보안 감사 10</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">화</div>
+                                    <div class="date purple">6</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 11</p>
+                                        <p>보안 감사 12</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">수</div>
+                                    <div class="date blue">7</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 13</p>
+                                        <p>보안 감사 14</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">목</div>
+                                    <div class="date purple">8</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 15</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">금</div>
+                                    <div class="date blue">9</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 16</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">토</div>
+                                    <div class="date purple">10</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 17</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">일</div>
+                                    <div class="date blue">11</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 18</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">월</div>
+                                    <div class="date purple">12</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 19</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">화</div>
+                                    <div class="date blue">13</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 20</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">수</div>
+                                    <div class="date purple">14</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 21</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">목</div>
+                                    <div class="date blue">15</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 22</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">금</div>
+                                    <div class="date purple">16</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 23</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">토</div>
+                                    <div class="date blue">17</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 24</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">일</div>
+                                    <div class="date purple">18</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 25</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">월</div>
+                                    <div class="date blue">19</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 26</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">화</div>
+                                    <div class="date purple">20</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 27</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">수</div>
+                                    <div class="date blue">21</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 28</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">목</div>
+                                    <div class="date purple">22</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 29</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">금</div>
+                                    <div class="date blue">23</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 30</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">토</div>
+                                    <div class="date purple">24</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 31</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">일</div>
+                                    <div class="date blue">25</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 32</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">월</div>
+                                    <div class="date purple">26</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 33</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">화</div>
+                                    <div class="date blue">27</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 34</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">수</div>
+                                    <div class="date purple">28</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 35</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">목</div>
+                                    <div class="date blue">29</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 36</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">금</div>
+                                    <div class="date purple">30</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 37</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide security-date">
+                                    <div class="day">토</div>
+                                    <div class="date blue">31</div>
+                                    <div class="security-schedule">
+                                        <p>보안 감사 38</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="security-calendar-detail-wrap">
+                        <div class="security-calendar-tail"></div>
+                        <div class="security-calendar-detail inner"></div>
+                    </div>
+                </section>
+                <!-- //1월의 보안 캘린더 -->
+
+                <!-- 재정적 추정 손실,보장 유형별 점수 -->
+                <section class="main-status">
+                    <div class="inner">
+                        <div class="tab-area">
+                            <ul class="tab-list fade-in">
+                                <li>
+                                    <button class="tab" type="button" aria-controls="score-type">재정적 추정 손실</button>
+                                </li>
+                                <li>
+                                    <button class="tab" type="button" aria-controls="score-type">보장 유형별 점수</button>
+                                </li>
+                                <li>
+                                    <button class="tab" type="button" aria-controls="score-type">다크웹 노출</button>
+                                </li>
+                            </ul>
+                            <div class="tab-conts">
+                                <div class="tab-cont d-flex mt-30" id="score-type">
+                                    <img class="fade-in" src="../../assets/images/group_list.svg" alt="" />
+                                </div>
+                                <div class="tab-cont d-flex mt-30" id="financial">tab02</div>
+                                <div class="tab-cont d-flex mt-30" id="darkweb">tab03</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //재정적 추정 손실,보장 유형별 점수 -->
+
+                <!-- 서비스 바로가기 -->
+                <section class="padding-01">
+                    <div class="main-tit-wrap inner fade-in">
+                        <h2 class="main-tit">서비스 바로가기</h2>
+                        <a href="#n" class="more-btn">전체보기</a>
+                    </div>
+                    <div class="service-quick-list-swiper fade-in">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../../assets/images/typed_slide_img.png" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../assets/images/typed_slide_img.png" alt="" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../../assets/images/typed_slide_img.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <ul class="service-quick-list fade-in">
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_10.svg" alt="" />
+                                    </div>
+                                    <span>외부망 보안점검</span>
+                                </a>
+                            </li>
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_11.svg" alt="" />
+                                    </div>
+                                    <span>악성메일 모의훈련</span>
+                                </a>
+                            </li>
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_12.svg" alt="" />
+                                    </div>
+                                    <span>취약점 자동진단</span>
+                                </a>
+                            </li>
+                            <li class="service-quick-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_dummy_13.svg" alt="" />
+                                    </div>
+                                    <span>다크웹 모니터링</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- //서비스 바로가기 -->
+
+                <!-- 보안 컨설팅 -->
+                <section class="">
+                    <div class="inner">
+                        <div class="main-tit-wrap">
+                            <h2 class="main-tit fade-in">보안 컨설팅</h2>
+                        </div>
+                        <ul class="security-cunsulting-list fade-in">
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_09.svg" alt="" />
+                                    </div>
+                                    <span>워크숍</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_10.svg" alt="" />
+                                    </div>
+                                    <span>웨비나</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_11.svg" alt="" />
+                                    </div>
+                                    <span>로드맵 개발</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_12.svg" alt="" />
+                                    </div>
+                                    <span>도상훈련</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_09.svg" alt="" />
+                                    </div>
+                                    <span>모니터링</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_10.svg" alt="" />
+                                    </div>
+                                    <span>모의해킹</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_11.svg" alt="" />
+                                    </div>
+                                    <span>보완관제</span>
+                                </a>
+                            </li>
+                            <li class="security-consulting-item">
+                                <a href="#">
+                                    <div class="icon">
+                                        <img src="../../assets/images/icon/ico_cons_12.svg" alt="" />
+                                    </div>
+                                    <span>전체서비스</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- //보안 컨설팅 -->
+
+                <!-- 인텔리전스 보고서 -->
+                <section class="padding-02">
+                    <div class="inner">
+                        <div class="main-tit-wrap fade-in">
+                            <h2 class="main-tit">인텔리전 스보고서</h2>
+                            <a href="#n" class="more-btn">전체보기</a>
+                        </div>
+                        <ul class="intel-form fade-in">
+                            <li>
+                                <img src="../../assets/images/report_dummy_01.png" alt="" />
+                            </li>
+                            <li>
+                                <img src="../../assets/images/report_dummy_02.png" alt="" />
+                            </li>
+                            <li>
+                                <img src="../../assets/images/report_dummy_03.png" alt="" />
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- //인텔리전스 보고서 -->
+
+                <!-- 보안 소식 -->
+                <section class="padding-03">
+                    <div class="inner">
+                        <div class="main-tit-wrap fade-in">
+                            <h2 class="main-tit">보안 소식</h2>
+                        </div>
+                        <div class="secu-form fade-in">
+                            <div class="swiper">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <img src="../../assets/images/news_dummy_01.png" alt="" />
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../../assets/images/news_dummy_02.png" alt="" />
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <img src="../../assets/images/news_dummy_01.png" alt="" />
+                                    </li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //보안 소식 -->
+
+                <footer id="footer">
+                    <img src="../../assets/images/footer_c.png" alt="" />
+                </footer>
+            </main>
+            <nav id="bottom-nav">
+                <ul class="bottom-nav-list">
+                    <li class="is-active">
+                        <a href="../prototype-c/main.html">
+                            <img src="../../assets/images/icon/ico_home_active.svg" alt="" />
+                            <span>홈</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/accident-report.html">
+                            <img src="../../assets/images/icon/ico_accident_report.svg" alt="" />
+                            <span>사고접수</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/service-apply.html">
+                            <img src="../../assets/images/icon/ico_service_apply.svg" alt="" />
+                            <span>서비스신청</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/report-list.html">
+                            <img src="../../assets/images/icon/ico_report.svg" alt="" />
+                            <span>보고서</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../prototype-a/my-page.html">
+                            <img src="../../assets/images/icon/ico_my.svg" alt="" />
+                            <span>마이</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+
         <script src="../../resources/js/jquery-3.7.1.min.js"></script>
+        <script src="../../resources/js/jquery.ui.min.js"></script>
         <script src="../../resources/js/swiper-bundle.min.js"></script>
         <script src="../../resources/js/progressbar.js"></script>
         <script src="../../resources/js/gsap.min.js"></script>
         <script src="../../resources/js/ScrollSmoother.js"></script>
         <script src="../../resources/js/ScrollTrigger.js"></script>
+        <script src="../../resources/js/popper.min.js"></script>
+        <script src="../../resources/js/bootstrap.min.js"></script>
         <script src="../../resources/js/common.js"></script>
         <script>
             $(function () {
-                let mainHeroSwiper = new Swiper('.hero-banner-list .swiper', {
-                    pagination: {
-                        el: '.hero-banner-list .swiper-pagination',
+                const barriors = document.querySelectorAll('[class^="barrior-circle"]');
+
+                function playOnce() {
+                    barriors.forEach((barrior) => {
+                        barrior.classList.remove('run');
+
+                        // Reflow 강제
+                        void barrior.offsetWidth;
+
+                        barrior.classList.add('run');
+                    });
+                }
+
+                playOnce();
+
+                // Tooltip Activate
+                $('[data-toggle="tooltip" ]').tooltip();
+
+                $('[data-toggle="tooltip" ]').tooltip({
+                    trigger: 'click focus',
+                });
+
+                // 보안 캘린더
+                const securityCalendarSwiper = new Swiper('.security-calendar .swiper', {
+                    slidesPerView: '7',
+                    centeredSlides: true,
+                    freeMode: {
+                        enabled: true,
+                        momentum: true,
                     },
-                    /*
+                    touchStartPreventDefault: false,
+                    observer: true,
+                    observeParents: true,
+                });
+
+                $('.security-calendar .swiper').css({
+                    touchAction: 'pan-x',
+                    overflow: 'auto',
+                });
+
+                function initCalendar() {
+                    const day = new Date().getDate();
+
+                    $('.security-date .day').each(function (idx, el) {
+                        if ($(el).text() == '토') {
+                            $(el).next().addClass('sat');
+                        } else if ($(el).text() == '일') {
+                            $(el).next().addClass('sun');
+                        }
+                    });
+
+                    $('.security-date .date').each(function (idx, el) {
+                        if ($(el).text() == day) {
+                            $(el).click();
+                        }
+                    });
+                }
+
+                $('.security-date .date').click(function () {
+                    $(this).parent().siblings().removeClass('is-active');
+                    $(this).parent().addClass('is-active');
+
+                    const slidesPerView = 7;
+                    const half = Math.floor(slidesPerView / 2);
+                    const total = securityCalendarSwiper.slides.length;
+
+                    const minIndex = half;
+                    const maxIndex = total - half - 1;
+                    const index = $(this).parent().index();
+
+                    /* == 클릭 요소 인덱스 별 캘린더 꼬리 중앙 이동 == */
+                    const containerLeft = $(this).closest('.swiper')[0].getBoundingClientRect().left;
+                    const tailHalfWidth = $('.security-calendar-tail').innerWidth() / 2;
+                    const targetHalfWidth = $(this).innerWidth() / 2;
+
+                    let targetLeft = $(this)[0].getBoundingClientRect().left;
+                    let targetMiddle = targetLeft + containerLeft - targetHalfWidth + tailHalfWidth;
+
+                    if (index < minIndex) {
+                        $(this).closest('.swiper-wrapper').css('transform', 'translate3d(0px, 0px, 0px)');
+                    } else if (index > maxIndex) {
+                        targetMiddle = targetLeft + containerLeft - targetHalfWidth + tailHalfWidth;
+                    } else {
+                        securityCalendarSwiper.slideTo(index, 300);
+
+                        targetMiddle = -2 + $(this).closest('.swiper').innerWidth() / 2 - tailHalfWidth;
+                    }
+
+                    $('.security-calendar-tail').css('transform', `translateX(${targetMiddle}px)`);
+
+                    /* == 클릭 요소 스케줄 바인딩 == */
+                    let clickedDate = $(this).html().toString().padStart(2, '0');
+                    let htmlContent = '';
+
+                    // 클릭 요소 flip-x로 나가게 만들기, 기존 flip-x-reverse 지움
+                    $('.security-calendar-detail p').removeClass('flip-x-reverse').addClass('flip-x');
+
+                    // 애니메이션 트랜지션 종료 후 새로운 요소로 갈아치움
+                    setTimeout(() => {
+                        $(this)
+                            .siblings('.security-schedule')
+                            .find('p')
+                            .each(function (idx, el) {
+                                let schedule = $(el).html();
+                                htmlContent += `<p class="flip-x-reverse">${schedule}</p>`;
+                            });
+
+                        $('.security-calendar-detail').html(htmlContent);
+                    }, 500);
+                });
+
+                initCalendar();
+
+                $('.range-bar').each(function (idx, el) {
+                    const min = Number($(this).attr('data-min'));
+                    const max = Number($(this).attr('data-max'));
+                    const total = Number($(this).attr('data-total'));
+
+                    const startPercent = (min / total) * 100;
+                    const endPercent = ((max - min) / total) * 100;
+
+                    $(this)
+                        .find('.range-fill')
+                        .css({
+                            left: startPercent + '%',
+                            width: endPercent + '%',
+                        });
+                });
+
+                let serviceQuickListSwiper = new Swiper('.service-quick-list-swiper .swiper', {
+                    slidesPerView: 1.2,
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        // type: "progressbar",
+                    },
+                    // on: {
+                    //     init: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //     },
+                    //     reachBeginning: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //         swiper.el.style.paddingRight = '0';
+                    //     },
+                    //     reachEnd: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '0';
+                    //         swiper.el.style.paddingRight = '16px';
+                    //     },
+                    // },
+                });
+
+                let securitySwiper = new Swiper('.secu-form .swiper', {
+                    slidesPerView: 1.2,
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        // type: "progressbar",
+                    },
+                    // on: {
+                    //     init: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //     },
+                    //     reachBeginning: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '16px';
+                    //         swiper.el.style.paddingRight = '0';
+                    //     },
+                    //     reachEnd: function (swiper) {
+                    //         swiper.el.style.paddingLeft = '0';
+                    //         swiper.el.style.paddingRight = '16px';
+                    //     },
+                    // },
+                });
+
+                let bottomBannerSwiper = new Swiper('.bottom-banner .swiper', {
+                    slidesPerView: 1,
+                    observeParents: true,
+                    observer: true,
+                    pagination: {
+                        el: '.bottom-banner .swiper-pagination',
+                        type: 'fraction',
+                    },
                     autoplay: {
                         delay: 4000,
                         disableOnInteraction: false,
                     },
-                    */
-                });
-
-                var circleContainer = document.getElementById('circle-container');
-
-                var circle = new ProgressBar.Circle(circleContainer, {
-                    strokeWidth: 10,
-                    trailWidth: 10,
-                    trailColor: '#e0e0e0',
-                    duration: 1200,
-                    easing: 'easeOut',
-                    startAngle: -Math.PI / 2,
-                    svgStyle: {
-                        strokeLinecap: 'round',
-                    },
-
-                    text: {
-                        value: '안전',
-                        className: 'circle-container-label',
-
-                        style: {
-                            color: '#006bff',
-                            position: 'absolute',
-                            left: '50%',
-                            top: '50%',
-                            padding: 0,
-                            margin: 0,
-                            transform: {
-                                prefix: true,
-                                value: 'translate(-50%, -50%)',
-                            },
+                    on: {
+                        init: function (swiper) {
+                            if (swiper.autoplay.running) {
+                                $(swiper.el).parent().find('.swiper-button-play').hide();
+                            } else {
+                                $(swiper.el).parent().find('.swiper-button-hide').hide();
+                            }
                         },
                     },
                 });
+            });
+        </script>
 
-                var svg = circle.svg;
-                var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-                defs.innerHTML = `
-                    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#2D7DFF"/>
-                        <stop offset="100%" stop-color="#4BC0E0"/>
-                    </linearGradient>
-                    `;
-                svg.insertBefore(defs, svg.firstChild);
+        <script src="../../motions/main-shield/top_motion.js"></script>
+        <script>
+            // Adobe Animate 상단 모션 초기화
 
-                circle.path.setAttribute('stroke', 'url(#circleGradient)');
-                circle.path.setAttribute('stroke-linecap', 'round');
-                circle.animate(0.75);
+            var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 
-                const lineOptions = {
-                    duration: 2000,
-                    easing: 'easeOut',
+            function initTopMotion() {
+                canvas = document.getElementById('canvas');
+                anim_container = document.getElementById('animation_container');
+                dom_overlay_container = document.getElementById('dom_overlay_container');
 
-                    step: (state, bar) => {
-                        const $bar = $(bar._container);
-                        const $handler = $('#' + $(bar._container).attr('id') + '-handler');
-                        const $barTotalLength = $bar.width();
-                        const value = Math.round(bar.value() * 100);
-                        const moveXDistance = $barTotalLength * bar.value();
+                if (!canvas || !anim_container || !dom_overlay_container || typeof AdobeAn === 'undefined') return;
 
-                        $handler.find('.status-handle-num').text(value);
-                        $handler.css('transform', `translateX(${moveXDistance}px)`);
-                    },
+                var comp = AdobeAn.getComposition('DD8E8EDB82AA6040BAED88450537C171');
+                if (!comp) return;
+
+                var lib = comp.getLibrary();
+                var loader = new createjs.LoadQueue(false);
+                loader.addEventListener('fileload', function (evt) {
+                    handleFileLoadTop(evt, comp);
+                });
+                loader.addEventListener('complete', function (evt) {
+                    handleCompleteTop(evt, comp);
+                });
+                // main.html 기준 경로 설정
+                loader.loadManifest(lib.properties.manifest, true, '../../motions/main-shield/');
+            }
+
+            function handleFileLoadTop(evt, comp) {
+                var images = comp.getImages();
+                if (evt && evt.item.type === 'image') {
+                    images[evt.item.id] = evt.result;
+                }
+            }
+
+            function handleCompleteTop(evt, comp) {
+                var lib = comp.getLibrary();
+                var ss = comp.getSpriteSheet();
+                var queue = evt.target;
+                var ssMetadata = lib.ssMetadata;
+                for (var i = 0; i < ssMetadata.length; i++) {
+                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                        images: [queue.getResult(ssMetadata[i].name)],
+                        frames: ssMetadata[i].frames,
+                    });
+                }
+                exportRoot = new lib.top_motion();
+                stage = new lib.Stage(canvas);
+
+                fnStartAnimation = function () {
+                    stage.addChild(exportRoot);
+                    createjs.Ticker.framerate = lib.properties.fps;
+                    createjs.Ticker.addEventListener('tick', stage);
                 };
 
-                var line1 = new ProgressBar.Line(document.getElementById('line1'), {
-                    ...lineOptions,
-                    color: '#2888ca',
-                });
+                AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
+                AdobeAn.compositionLoaded(lib.properties.id);
+                fnStartAnimation();
+            }
 
-                line1.path.setAttribute('stroke-linecap', 'round');
-
-                var line2 = new ProgressBar.Line(document.getElementById('line2'), {
-                    ...lineOptions,
-                });
-
-                line2.path.setAttribute('stroke-linecap', 'round');
-
-                line1.animate(0.5);
-
-                setTimeout(() => {
-                    line2.animate(0.75);
-                }, 2200);
-            });
+            window.addEventListener('load', initTopMotion);
         </script>
     </body>
 </html>

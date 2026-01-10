@@ -1,0 +1,50 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="360px" height="720px" viewBox="0 0 360 720">
+<defs>
+<image id="Main_C__3_png" x="0" y="0" width="360" height="3988" xlink:href="./images/Main_C__3_png.png"/>
+
+<image id="Frame_120_png" x="0" y="0" width="360" height="930" xlink:href="./images/Frame_120_png.png"/>
+
+<image id="Ellipse_61_png" x="0" y="0" width="360" height="470" xlink:href="./images/Ellipse_61_png.png"/>
+
+<image id="Ellipse_60_png" x="0" y="0" width="360" height="406" xlink:href="./images/Ellipse_60_png.png"/>
+
+<image id="Ellipse_59_png" x="0" y="0" width="342" height="342" xlink:href="./images/Ellipse_59_png.png"/>
+
+<image id="___png" x="0" y="0" width="183" height="208" xlink:href="./images/___png.png"/>
+</defs>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#Main_C__3_png"/>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 180,465) ">
+<g transform="matrix( 1, 0, 0, 1, -180,-465) ">
+<use xlink:href="#Frame_120_png"/>
+</g>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 180,260) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<g transform="matrix( 1, 0, 0, 1, -180,-235) ">
+<use xlink:href="#Ellipse_61_png"/>
+</g>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<g transform="matrix( 1, 0, 0, 1, -180,-203) ">
+<use xlink:href="#Ellipse_60_png"/>
+</g>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<g transform="matrix( 1, 0, 0, 1, -171,-171) ">
+<use xlink:href="#Ellipse_59_png"/>
+</g>
+</g>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 89,158) ">
+<use xlink:href="#___png"/>
+</g>
+</svg>

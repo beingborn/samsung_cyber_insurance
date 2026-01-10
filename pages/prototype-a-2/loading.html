@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>삼성화재 | 사이버보험 모바일 웹</title>
+        <link rel="stylesheet" href="../../resources/css/default.css" />
+    </head>
+    <body id="type-a">
+        <div class="h-screen loading-wrap">
+            <div class="loading-cont fade-in">
+                <p class="loading-tit">
+                    사이버 보험으로<br />
+
+                    <strong class="txt-pri">고객의 자산을 안전</strong>하게!
+                </p>
+                <img src="../../assets/images/icon/icon_loading_security.png" alt="" width="180" />
+                <div class="loading-progress-wrap">
+                    <progress class="progress" value="0" max="100" id="loading-progress"></progress>
+                </div>
+            </div>
+            <div class="flex-item-bottom">
+                <img src="../../assets/images/logo/logo_text_pri_en.svg" alt="삼성화재 사이버보험 영문" width="92" height="32" />
+            </div>
+        </div>
+        <div class="loader-wrap">
+            <div class="loader-container">
+                <div class="d-flex flex-col g-12">
+                    <span class="loader"></span>
+                    <!-- <span class="txt-pri">로딩중..</span> -->
+                </div>
+            </div>
+        </div>
+
+        <script src="../../resources/js/jquery-3.7.1.min.js"></script>
+        <script src="../../resources/js/swiper-bundle.min.js"></script>
+        <script src="../../resources/js/gsap.min.js"></script>
+        <script src="../../resources/js/ScrollSmoother.js"></script>
+        <script src="../../resources/js/ScrollTrigger.js"></script>
+        <script src="../../resources/js/common.js"></script>
+        <script>
+            $(function () {
+                function showLoading() {
+                    $('body').css('overflow', 'hidden');
+                    $('.loader-wrap').show();
+                }
+
+                function loadingAnimationTest() {
+                    setTimeout(() => {
+                        let initValue = 0;
+
+                        let loadingTimer = setInterval(() => {
+                            $('#loading-progress').attr('value', initValue++);
+
+                            if (+$('#loading-progress').attr('value') === 100) {
+                                clearInterval(loadingTimer);
+
+                                showLoading();
+
+                                setTimeout(() => {
+                                    $(location).attr('href', './login.html');
+                                }, 1500);
+                            }
+                        }, 50);
+                    }, 1000);
+                }
+
+                loadingAnimationTest();
+
+                $('.loading-tit').click(function () {
+                    loadingAnimationTest();
+                });
+            });
+        </script>
+    </body>
+</html>

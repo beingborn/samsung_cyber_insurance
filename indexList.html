@@ -18,31 +18,20 @@
                         <strong>| 모바일 웹 프로토타입</strong>
                     </div>
                 </div>
-                <div class="index-header-right lg-only">
+                <div class="index-header-right">
                     <div class="project-status">
                         <p>전체 페이지 : <span id="allPagesNum"></span></p>
                         <p>완료 페이지 : <span id="donePagesNum"></span></p>
                         <p>잔여 페이지 : <span id="remainPagesNum"></span></p>
                     </div>
                     <div class="project-search">
-                        <input type="text" id="searchTerm" placeholder="화면명을 입력해주세요" maxlength="30" disabled />
+                        <input type="text" id="searchTerm" placeholder="화면명을 입력해주세요" maxlength="30" />
                     </div>
                 </div>
             </div>
         </header>
         <div id="index-page-wrap">
             <div class="container">
-                <div class="index-header-right sm-only-flex">
-                    <div class="project-status">
-                        <p>전체 페이지 : <span id="allPagesNum-sm"></span></p>
-                        <p>완료 페이지 : <span id="donePagesNum-sm"></span></p>
-                        <p>잔여 페이지 : <span id="remainPagesNum-sm"></span></p>
-                    </div>
-                    <div class="project-search">
-                        <input type="text" id="searchTerm" placeholder="화면명을 입력해주세요" maxlength="30" disabled />
-                    </div>
-                </div>
-
                 <div class="index-table-wrap">
                     <table class="index-table">
                         <caption>
@@ -50,10 +39,9 @@
                         </caption>
                         <colgroup>
                             <col style="width: 12rem" />
-                            <col style="width: 16rem" />
+                            <col style="width: 20rem" />
                             <col />
                             <col style="width: 10rem" />
-                            <col />
                         </colgroup>
                         <thead>
                             <tr>
@@ -61,86 +49,10 @@
                                 <th>화면명</th>
                                 <th>URL</th>
                                 <th>완료 여부</th>
-                                <th>비고</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!-- Type A -->
-                            <tr>
-                                <td rowspan="5">Type - A</td>
-                                <td>인트로</td>
-                                <td><a href="./pages/prototype-a/intro.html">intro.html</a></td>
-                                <td class="status txt-center">O</td>
-                                <td>
-                                    <p>(20251229) 기본 구조, 스타일링 진행</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>로딩</td>
-                                <td><a href="./pages/prototype-a/loading.html">loading.html</a></td>
-                                <td class="status txt-center">O</td>
-                                <td>
-                                    <p>(20251229) 기본 구조, 스타일링 진행</p>
-                                    <p>(20251230) 애니메이션 적용</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>로그인</td>
-                                <td><a href="./pages/prototype-a/login.html">login.html</a></td>
-                                <td class="status txt-center">O</td>
-                                <td>
-                                    <p>(20251229) 기본 구조, 스타일링 진행</p>
-                                    <p>(20251230) 애니메이션 적용</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>메인</td>
-                                <td><a href="./pages/prototype-a/main.html">main.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td>
-                                    <p>(20251230) 기본 구조, 스타일링 진행</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>사고접수</td>
-                                <td><a href="./pages/prototype-a/accident-report.html">accident-report.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td>
-                                    <p>(20251230) 기본 구조, 스타일링 진행</p>
-                                </td>
-                            </tr>
-                            <!-- Type B -->
-                            <tr>
-                                <td rowspan="5">Type - B</td>
-                                <td>인트로</td>
-                                <td><a href="./pages/prototype-b/intro.html">intro.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>로딩</td>
-                                <td><a href="./pages/prototype-b/loading.html">loading.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>로그인</td>
-                                <td><a href="./pages/prototype-b/login.html">login.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>메인</td>
-                                <td><a href="./pages/prototype-b/main.html">main.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>사고접수</td>
-                                <td><a href="./pages/prototype-b/accident-report.html">accident-report.html</a></td>
-                                <td class="status txt-center"></td>
-                                <td></td>
-                            </tr>
+                        <tbody id="pagesTableBody">
+                            <!-- 동적으로 생성됩니다 -->
                         </tbody>
                     </table>
                 </div>
@@ -150,29 +62,105 @@
     <script src="./resources/js/jquery-3.7.1.min.js"></script>
     <script>
         $(function () {
-            const pageLength = $('.index-table tbody tr').length;
-            let donePageLength = 0;
+            let pagesData = [];
+            let searchList = null;
 
-            $('.index-table tbody tr').each(function () {
-                var status = $(this).find('td.status').text().trim();
+            // JSON 데이터 로드 및 테이블 생성
+            $.getJSON('./pages-data.json', function (data) {
+                const tbody = $('#pagesTableBody');
+                tbody.empty();
 
-                if (status === 'O' || status === '완료') {
-                    $(this).find('td.status').addClass('done');
-                    donePageLength++;
-                } else {
-                    $(this).find('td.status').addClass('not-done');
-                }
+                data.categories.forEach(function (category) {
+                    const pageCount = category.pages.length;
+                    const basePath = './pages/' + category.id + '/';
+
+                    category.pages.forEach(function (page, index) {
+                        const tr = $('<tr></tr>');
+
+                        // 첫 번째 행에만 카테고리 셀 추가 (rowspan)
+                        if (index === 0) {
+                            const categoryCell = $('<td></td>').attr('rowspan', pageCount);
+
+                            if (category.type === 'prototype' && category.thumbnail) {
+                                categoryCell.html('<div class="intro-thumbnail">' + '<span>' + category.name + '</span>' + '<img src="' + category.thumbnail + '" width="100" />' + '</div>');
+                            } else {
+                                categoryCell.text(category.name);
+                            }
+
+                            tr.append(categoryCell);
+                        }
+
+                        // 화면명
+                        const titleCell = $('<td></td>')
+                            .attr('data-col', 'title')
+                            .text(page.title || '');
+                        tr.append(titleCell);
+
+                        // URL
+                        const url = basePath + page.file;
+                        const urlCell = $('<td></td>').html('<a href="' + url + '">' + url + '</a>');
+                        tr.append(urlCell);
+
+                        // 완료 여부
+                        const statusCell = $('<td></td>')
+                            .addClass('status txt-center')
+                            .text(page.status || '');
+                        tr.append(statusCell);
+
+                        tbody.append(tr);
+                    });
+                });
+
+                // 완료 후 초기화
+                initializeTable();
+            }).fail(function () {
+                console.error('JSON 파일을 불러올 수 없습니다.');
+                $('#pagesTableBody').html('<tr><td colspan="4" class="txt-center">데이터를 불러올 수 없습니다.</td></tr>');
             });
 
-            $('#allPagesNum').text(pageLength);
-            $('#donePagesNum').text(donePageLength);
-            $('#remainPagesNum').text(pageLength - donePageLength);
+            // 테이블 초기화 및 이벤트 바인딩
+            function initializeTable() {
+                searchList = $('.index-table tbody tr:not(.disabled)');
+                const pageLength = searchList.length;
+                let donePageLength = 0;
 
-            $('#allPagesNum-sm').text(pageLength);
-            $('#donePagesNum-sm').text(donePageLength);
-            $('#remainPagesNum-sm').text(pageLength - donePageLength);
+                searchList.each(function () {
+                    const $status = $(this).find('td.status');
+                    const status = $status.text().trim();
 
-            $('.index-table tbody tr a').attr('target', '_blank');
+                    if (status === 'O' || status === '완료') {
+                        $status.addClass('done');
+                        donePageLength++;
+                    } else {
+                        $status.addClass('not-done');
+                    }
+                });
+
+                $('#allPagesNum').text(pageLength);
+                $('#donePagesNum').text(donePageLength);
+                $('#remainPagesNum').text(pageLength - donePageLength);
+
+                $('.index-table tbody tr a').attr('target', '_blank');
+            }
+
+            // 검색 기능 (테이블 생성 후 바인딩)
+            $('#searchTerm')
+                .off('keyup')
+                .on('keyup', function () {
+                    if (!searchList) return;
+
+                    const searchTerm = $(this).val().toLowerCase();
+
+                    searchList.each(function () {
+                        const title = $(this).find('td[data-col="title"]').text().toLowerCase();
+
+                        if (title.includes(searchTerm)) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
         });
     </script>
 </html>

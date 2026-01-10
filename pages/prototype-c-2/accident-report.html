@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>삼성화재 | 사이버보험 모바일 웹</title>
+        <link rel="stylesheet" href="../../resources/css/default.css" />
+    </head>
+    <body id="type-a">
+        <div id="wrap">
+            <header id="header">
+                <div class="inner">
+                    <h1>
+                        <a href="./main.html"><img src="../../assets/images/logo/logo.svg" alt="삼성화재 사이버보험" /></a>
+                    </h1>
+                    <div class="d-flex items-center g-4">
+                        <a href="../gate/gate-main.html">
+                            <img src="../../assets/images/icon/ico_menu.svg" alt="" />
+                        </a>
+                        <button type="button">
+                            <img src="../../assets/images/icon/icon_find_pri.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <main id="container" class="sub min-h-screen" style="padding-bottom: 0 !important">
+                <img class="w-100 fade-in" src="../../assets/images/c-2-accident-detail-1.png" alt="" />
+                <img class="w-100 fade-in" src="../../assets/images/c-2-accident-detail-2.png" alt="" />
+                <img class="w-100 fade-in" src="../../assets/images/c-2-accident-detail-3.png" alt="" />
+                <img class="w-100 fade-in" src="../../assets/images/c-2-accident-detail-4.png" alt="" />
+                <div class="inner">
+                    <img class="w-100 fade-in" src="../../assets/images/c-2-accident-detail-5.png" alt="" />
+                </div>
+                <img class="w-100 fade-in mt-40" src="../../assets/images/c-2-accident-detail-6.png" alt="" />
+            </main>
+            <footer id="footer">
+                <img class="w-100" src="../../assets/images/footer_a.svg" alt="" />
+            </footer>
+
+            <nav id="bottom-nav">
+                <ul class="bottom-nav-list">
+                    <li>
+                        <a href="../prototype-c/main.html">
+                            <img src="../../assets/images/icon/ico_home.svg" alt="" />
+                            <span>홈</span>
+                        </a>
+                    </li>
+                    <li class="is-active">
+                        <a href="accident-report.html">
+                            <img src="../../assets/images/icon/ico_accident_report_active.svg" alt="" />
+                            <span>사고접수</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="service-apply.html">
+                            <img src="../../assets/images/icon/ico_service_apply.svg" alt="" />
+                            <span>서비스신청</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="report.html">
+                            <img src="../../assets/images/icon/ico_report.svg" alt="" />
+                            <span>보고서</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="my-page.html">
+                            <img src="../../assets/images/icon/ico_my.svg" alt="" />
+                            <span>마이</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script src="../../resources/js/jquery-3.7.1.min.js"></script>
+        <script src="../../resources/js/gsap.min.js"></script>
+        <script src="../../resources/js/ScrollSmoother.js"></script>
+        <script src="../../resources/js/ScrollTrigger.js"></script>
+        <script src="../../resources/js/common.js"></script>
+
+        <script>
+            $('.detail-cont').addClass('is-hide');
+            $('#hidden-detail-btn').hide();
+
+            $('.detail-btn').on('click', function () {
+                $('.detail-cont').toggleClass('is-hide');
+
+                $(this).find('svg').toggleClass('is-active');
+
+                if ($(this).attr('id') == 'origin-detail-btn') {
+                    $('#origin-detail-btn').hide();
+                    $('#hidden-detail-btn').show();
+                } else {
+                    $('#hidden-detail-btn').hide();
+                    $('#origin-detail-btn').show();
+                }
+            });
+        </script>
+    </body>
+</html>
