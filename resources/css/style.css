@@ -15,7 +15,7 @@
 }
 
 html {
-    background-color: #eee;
+    background-color: #fff;
     max-width: 37.5rem;
     margin: 0 auto;
     position: relative;
@@ -223,6 +223,7 @@ body.fade-out {
     /* Tab */
     .tab-area {
         width: 100%;
+        padding-bottom:6rem;
     }
 
     .tab-list {
@@ -736,6 +737,11 @@ body.fade-out {
     .accident-status-wrap {
         margin-block: 2.4rem 3rem;
     }
+    .accident-status-tab{
+        display:flex;
+        gap:0.3rem;
+        margin-top:3rem;
+    }
 
     .accident-status-tit {
         font-size: 2rem;
@@ -902,6 +908,35 @@ body.fade-out {
     .step-list.column li.is-curr .step-txt > strong {
         color: var(--a-txt-pri);
     }
+
+
+    .svc-apply-btn {
+        display: flex;
+        width: 100%;
+        margin-top: 2rem;
+        max-width: 37.5rem;
+    }
+    .svc-apply-btn .btn01 {
+        width: 100%;
+        height: 4.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #0068ff;
+        color: #0068ff;
+        border-radius: 1.2rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .svc-apply-btn button:disabled {
+        opacity: 0.3;
+        background: #0068ff;
+        color: #fff;
+        border: 1px solid #ddd;
+        cursor: not-allowed;
+    }
+
+    
 }
 
 #type-b {
@@ -3442,6 +3477,7 @@ body.fade-out {
         left: 50%;
         top: 8rem;
         transform: translateX(-50%);
+        line-height: 100%;
     }
 
     .shield-inner {
@@ -3657,6 +3693,9 @@ body.fade-out {
         box-shadow: 5px 5px 10px 0px #3649af1a;
         justify-content: space-between;
         gap: 0 2rem;
+    }
+    .intel-form li a{
+        width:100%;
     }
     .intel-form li .icon {
     }

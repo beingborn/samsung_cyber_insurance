@@ -442,6 +442,11 @@
     align-items: center;
 }
 
+/* Bg */
+.bg-white {
+    background-color: #fff;
+}
+
 /* Media */
 .lg-only {
     display: block !important;

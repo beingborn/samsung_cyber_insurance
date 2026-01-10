@@ -2,6 +2,7 @@ html {
     max-width: none;
     overflow-x: auto;
     margin: 0;
+    background-color: #fff;
 }
 
 body {
