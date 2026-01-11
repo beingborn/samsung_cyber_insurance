@@ -490,15 +490,6 @@
     height: 100%;
 }
 
-#wrap:has(#bottom-nav) {
-    overflow: auto;
-    margin-bottom: 9.2rem;
-}
-
-#wrap:has(#bottom-nav)::-webkit-scrollbar {
-    display: none;
-}
-
 /* Container */
 #container {
     flex-grow: 1;
