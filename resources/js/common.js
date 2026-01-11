@@ -33,17 +33,15 @@ $(function () {
                     countNum: countTo,
                 },
                 {
-                    duration: 5000,
+                    duration: 3000,
                     easing: 'linear',
                     step: function () {
                         // step size
                         let remain = countTo - displayNum;
                         let stepSize;
 
-                        if (remain <= 0) return;
-
                         if (displayNum < countTo * 0.7) {
-                            stepSize = 2;
+                            stepSize = 1;
                         } else if (displayNum < countTo * 0.9) {
                             stepSize = 1;
                         } else {
@@ -53,9 +51,13 @@ $(function () {
                         displayNum = Math.min(countTo, displayNum + stepSize);
 
                         $this.text(displayNum);
+
+                        if (remain <= 0) return;
                     },
                     complete: function () {
-                        $this.text(this.countNum);
+                        console.log('완료');
+
+                        // $this.text(this.countNum);
                     },
                 }
             );

@@ -89,23 +89,11 @@
                 $('.loading-wrap').css('display', 'flex');
 
                 setTimeout(() => {
-                    let initValue = 0;
-
-                    /*
-                    let loadingTimer = setInterval(() => {
-                        $('#loading-progress').attr('value', initValue++);
-
-                        if (+$('#loading-progress').attr('value') === 100) {
-                            clearInterval(loadingTimer);                            
-                        }
-                    }, speed);
-                    */
-
                     callback();
                 }, delay);
             }
 
-            function showLoading(delay) {
+            function showLoading(delay, callback = function () {}) {
                 $('.cert-loading').css({
                     display: 'flex',
                     position: 'absolute',
@@ -121,19 +109,19 @@
                 if (delay) {
                     setTimeout(() => {
                         $('.cert-loading').fadeOut(500);
+
+                        callback();
                     }, delay);
                 }
             }
 
             function loginIntroAnimation() {
-                $('.cert-loading').css('display', 'none');
                 $('#login-form').hide();
-                $('#intro-animation').fadeIn(500);
 
-                setTimeout(function () {
-                    $('#intro-animation').fadeOut(500);
+                showProgressLoading(5000, function () {
+                    $('.loading-wrap').css('display', 'none');
                     $('#login-form').fadeIn(300);
-                }, 3000);
+                });
             }
 
             loginIntroAnimation();
@@ -142,18 +130,11 @@
             const loginForm = document.querySelector('#login-form');
 
             function onSubmit(token) {
-                // 2. 로딩 화면 표시
-                showLoading();
+                showLoading(1000, function () {
+                    window.location.href = './main.html';
+                });
 
-                setTimeout(() => {
-                    $('.cert-loading').hide();
-
-                    showProgressLoading(5000, function () {
-                        window.location.href = './main.html';
-                    });
-                }, 500);
-
-                // 1. 토큰이 정상적으로 생성되었는지 확인
+                console.log('token', token);
             }
 
             $('.form-input input').focus(function () {
