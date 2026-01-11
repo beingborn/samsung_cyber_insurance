@@ -87,7 +87,7 @@
         <div id="alertPopup" class="popup">
             <div class="popup-header">
                 <h2 class="tit">비밀번호 변경</h2>
-                <button type="button" data-popup-close>
+                <button type="button" onclick="window.location.href='./my-page.html'">
                     <span class="sr-only">닫기</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
@@ -104,7 +104,7 @@
                     <img class="w-100 fade-in" src="../../assets/images/change_password_3.svg" alt="" />
                 </div>
                 <div class="flex-item-bottom" style="padding-bottom: 30px; padding-inline: 15px">
-                    <button class="btn btn-pri w-100 detail-cont">확인</button>
+                    <button onclick="window.location.href='./my-page.html'" class="btn btn-pri w-100 detail-cont">확인</button>
                 </div>
             </div>
         </div>
@@ -114,5 +114,19 @@
         <script src="../../resources/js/ScrollSmoother.js"></script>
         <script src="../../resources/js/ScrollTrigger.js"></script>
         <script src="../../resources/js/common.js"></script>
+        <script>
+            // 이전 URL 세팅
+            function prevUrlLinksSet() {
+                let activePrototype = localStorage.getItem('active_prototype') || 'prototype-a';
+
+                const $subNavLinks = $('.bottom-nav-list li a');
+                let baseUrl = `../${activePrototype}`;
+
+                $subNavLinks.eq(0).attr('href', `${baseUrl}/main.html`);
+                $subNavLinks.eq(1).attr('href', `${baseUrl}/accident-report.html`);
+            }
+
+            prevUrlLinksSet();
+        </script>
     </body>
 </html>

@@ -8,6 +8,7 @@ html {
 body {
     font-size: 1.6rem;
     min-width: 120rem;
+    height: auto;
 }
 
 #index-page-wrap {

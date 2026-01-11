@@ -275,6 +275,10 @@
     padding-top: 0.8rem !important;
 }
 
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
 .pb-20 {
     padding-bottom: 2rem !important;
 }
@@ -428,15 +432,16 @@
 .min-h-screen {
     height: 100%;
     min-width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 72rem;
 }
 
 .h-screen {
     height: 100vh;
     min-width: 100%;
+    max-height: 72rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -533,6 +538,11 @@
 
 .fade-in-animate {
     animation: fade-in 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.fade-in-no-move {
+    animation: fade-in-no-move 1.5s;
     animation-fill-mode: forwards;
 }
 

@@ -147,7 +147,7 @@
         <div id="alertPopup" class="popup">
             <div class="popup-header">
                 <h2 class="tit">위협 인텔리전스 보고서 상세</h2>
-                <button type="button" data-popup-close>
+                <button type="button" onclick="window.location.href='./report-list.html'">
                     <span class="sr-only">닫기</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
@@ -178,6 +178,19 @@
         <script src="../../resources/js/common.js"></script>
 
         <script>
+            // 이전 URL 세팅
+            function prevUrlLinksSet() {
+                let activePrototype = localStorage.getItem('active_prototype') || 'prototype-a';
+
+                const $subNavLinks = $('.bottom-nav-list li a');
+                let baseUrl = `../${activePrototype}`;
+
+                $subNavLinks.eq(0).attr('href', `${baseUrl}/main.html`);
+                $subNavLinks.eq(1).attr('href', `${baseUrl}/accident-report.html`);
+            }
+
+            prevUrlLinksSet();
+
             $('.detail-cont').hide();
 
             $('.detail-btn').click(function () {

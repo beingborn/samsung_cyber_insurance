@@ -18,7 +18,6 @@ html {
     background-color: #fff;
     max-width: 37.5rem;
     margin: 0 auto;
-    position: relative;
 
     #header,
     #bottom-nav,
@@ -27,6 +26,7 @@ html {
     .intro-wrap,
     .loading-wrap {
         max-width: 37.5rem;
+        max-height: 72rem;
     }
 }
 
@@ -56,6 +56,10 @@ body.fade-out {
     position: absolute;
     top: 1rem;
     left: 1.5rem;
+}
+
+.main-top-motion {
+    position: relative;
 }
 
 /* 게이트 페이지 */
@@ -134,9 +138,6 @@ body.fade-out {
 
 .detail-ul > li > button {
     font-size: 1.5rem;
-}
-
-.detail-ul > li > button:hover {
     color: #0068ff;
 }
 
@@ -2070,7 +2071,7 @@ body.fade-out {
 
     .main-top-motion .shield-txt {
         position: absolute;
-        top: 23.4rem;
+        top: 25.2rem;
         width: 100%;
         max-width: 37.5rem;
         text-align: center;
@@ -2998,7 +2999,7 @@ body.fade-out {
     }
 
     .security-calendar-detail {
-        padding-block: 3rem;
+        padding-block: 1.6rem;
         background-color: #fff;
         display: flex;
         flex-direction: column;
@@ -3480,7 +3481,7 @@ body.fade-out {
         font-weight: 800;
         position: absolute;
         left: 50%;
-        top: 8rem;
+        top: 9.4rem;
         transform: translateX(-50%);
         line-height: 100%;
     }

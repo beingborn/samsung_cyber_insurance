@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="inner">
-                    <div class="tab-area">
+                    <div class="tab-area pb-0">
                         <ul class="tab-list">
                             <li>
                                 <button class="tab" aria-controls="tab-1">사이버사고 접수 현황</button>
@@ -149,14 +149,14 @@
                                 </div>
                             </div>
                             <div class="tab-cont" id="tab-2">
-                                <div class="d-flex flex-col g-16">
-                                    <img class="w-100 fade-in" src="../../assets/images/accident_example_1.svg" alt="" />
-                                    <img class="w-100 fade-in" src="../../assets/images/accident_example_2.svg" alt="" />
+                                <div class="d-flex flex-col g-16 fade-in">
+                                    <img class="w-100" src="../../assets/images/accident_example_1.svg" alt="" />
+                                    <img class="w-100" src="../../assets/images/accident_example_2.svg" alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-pri w-100 flex-item-bottom" onclick="window.location.href='../sub/accident-history.html'">사고접수 신청</button>
+                    <button id="confirm-accident" style="margin-top: -12px" class="btn btn-pri w-100 flex-item-bottom" onclick="window.location.href='../sub/accident-history.html'">사고접수 신청</button>
                 </div>
 
                 <div class="inner d-flex flex-col flex-grow-1" style="display: none !important">
@@ -274,13 +274,13 @@
         <script src="../../resources/js/common.js"></script>
 
         <script>
+            localStorage.setItem('active_prototype', 'prototype-a');
+
             $('.detail-cont').addClass('is-hide');
             $('#hidden-detail-btn').hide();
 
             $('.detail-btn').on('click', function () {
                 $('.detail-cont').toggleClass('is-hide');
-
-                $(this).find('svg').toggleClass('is-active');
 
                 if ($(this).attr('id') == 'origin-detail-btn') {
                     $('#origin-detail-btn').hide();
@@ -288,6 +288,14 @@
                 } else {
                     $('#hidden-detail-btn').hide();
                     $('#origin-detail-btn').show();
+                }
+            });
+
+            $('.tab').click(function () {
+                if ($(this).attr('aria-controls') == 'tab-1') {
+                    $('#confirm-accident').css('margin-top', '-12px');
+                } else {
+                    $('#confirm-accident').css('margin-top', '20px');
                 }
             });
         </script>

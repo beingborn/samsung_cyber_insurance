@@ -235,7 +235,7 @@
                 <!-- 재정적 추정 손실,보장 유형별 점수 -->
                 <section class="main-status bg-white">
                     <div class="inner">
-                        <div class="tab-area">
+                        <div class="tab-area no-init">
                             <ul class="tab-list fade-in">
                                 <li>
                                     <button class="tab" type="button" aria-controls="score-type">재정적 추정 손실</button>
@@ -255,7 +255,9 @@
                                     <img class="fade-in" src="../../assets/images/group_list.svg" alt="" />
                                 </div>
                                 <div class="tab-cont d-flex mt-30" id="darkweb">
-                                    <img class="fade-in" src="../../assets/images/dark_web.svg" alt="" />
+                                    <a href="../sub/exposure-detail.html">
+                                        <img class="fade-in" src="../../assets/images/dark_web.svg" alt="" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +269,7 @@
                 <section class="padding-01">
                     <div class="main-tit-wrap inner fade-in">
                         <h2 class="main-tit">서비스 바로가기</h2>
-                        <a href="#n" class="more-btn">전체보기</a>
+                        <a href="../sub/free-service.html" class="more-btn">전체보기</a>
                     </div>
                     <div class="service-quick-list-swiper fade-in">
                         <div class="swiper">
@@ -500,6 +502,10 @@
         <script src="../../resources/js/common.js"></script>
         <script>
             $(function () {
+                localStorage.setItem('active_prototype', 'prototype-a');
+
+                $('.main-status .tab').eq(1).click();
+
                 const barriors = document.querySelectorAll('[class^="barrior-circle"]');
 
                 function playOnce() {
@@ -524,6 +530,8 @@
 
                 // 보안 캘린더
                 const securityCalendarSwiper = new Swiper('.security-calendar .swiper', {
+                    allowTouchMove: false,
+
                     slidesPerView: '7',
                     centeredSlides: true,
                     freeMode: {
@@ -536,7 +544,7 @@
                 });
 
                 $('.security-calendar .swiper').css({
-                    touchAction: 'pan-x',
+                    touchAction: 'none',
                     overflow: 'auto',
                 });
 

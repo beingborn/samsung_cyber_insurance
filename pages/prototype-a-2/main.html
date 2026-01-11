@@ -625,7 +625,7 @@
                 <section>
                     <div class="main-tit-wrap inner fade-in">
                         <h2 class="main-tit">서비스 <span>바로가기</span></h2>
-                        <a href="#n" class="more-btn">전체보기</a>
+                        <a href="../sub/free-service.html" class="more-btn">전체보기</a>
                     </div>
                     <div class="service-quick-list-swiper fade-in">
                         <div class="swiper">
@@ -899,6 +899,8 @@
         <script src="../../resources/js/common.js"></script>
         <script>
             $(function () {
+                localStorage.setItem('active_prototype', 'prototype-a-2');
+
                 $('.progress-box-item').addClass('fade-in').css('--ani-delay', '0.2s');
 
                 const barriors = document.querySelectorAll('[class^="barrior-circle"]');
@@ -944,6 +946,7 @@
 
                 // 보안 캘린더
                 const securityCalendarSwiper = new Swiper('.security-calendar .swiper', {
+                    allowTouchMove: false,
                     slidesPerView: '7',
                     centeredSlides: true,
                     freeMode: {
@@ -956,7 +959,7 @@
                 });
 
                 $('.security-calendar .swiper').css({
-                    touchAction: 'pan-x',
+                    touchAction: 'none',
                     overflow: 'auto',
                 });
 

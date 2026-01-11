@@ -27,7 +27,7 @@
                     <img class="w-100 fade-in" src="../../assets/images/b-2-accident-detail-3.png" alt="" />
                     <img class="w-100 fade-in" src="../../assets/images/b-2-accident-detail-4.png" alt="" />
                     <button onclick="window.location.href='../sub/accident-history.html'">
-                        <img class="mt-30 w-100 fade-in" src="../../assets/images/b-accident-detail-5.png" alt="" />
+                        <img class="mt-30 w-100" src="../../assets/images/b-accident-detail-5.png" alt="" />
                     </button>
                 </div>
             </main>
@@ -74,6 +74,8 @@
         <script src="../../resources/js/common.js"></script>
 
         <script>
+            localStorage.setItem('active_prototype', 'prototype-b-2');
+
             $('.detail-cont').addClass('is-hide');
             $('#hidden-detail-btn').hide();
 

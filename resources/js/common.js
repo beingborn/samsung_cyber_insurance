@@ -67,7 +67,7 @@ $(function () {
     function checkFadeIn() {
         $('.fade-in').each(function (i) {
             var bottom_of_element = $(this).offset().top + 100;
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            var bottom_of_window = $('body').scrollTop() + $('body').height();
 
             if (bottom_of_window > bottom_of_element) {
                 $(this).addClass('fade-in-animate');
@@ -79,9 +79,9 @@ $(function () {
     const headerTypeC = $('#type-c #header .inner, #type-d #header .inner');
 
     function checkScroll() {
-        if (headerTypeC.outerHeight() < $(window).scrollTop()) {
+        if (headerTypeC.outerHeight() < $('body').scrollTop()) {
             headerTypeC.removeClass('is-top').addClass('is-fixed');
-        } else if ($(window).scrollTop() < headerTypeC.outerHeight()) {
+        } else if ($('body').scrollTop() < headerTypeC.outerHeight()) {
             headerTypeC.removeClass('is-fixed').addClass('is-top');
         }
     }
@@ -89,8 +89,8 @@ $(function () {
     // Scroll이 올라가는 현상
 
     // Scroll Event
-    $(window).on('scroll', checkFadeIn);
-    $(window).on('scroll', checkScroll);
+    $('body').on('scroll', checkFadeIn);
+    $('body').on('scroll', checkScroll);
 
     // Document Ready
     checkFadeIn();
@@ -125,6 +125,8 @@ $(function () {
         }
     });
 
+    $('.tab-area.no-init').find('tab').addClass('no-auto-click');
+
     $('.tab')
         .click(function () {
             let controlPanel = $('#' + $(this).attr('aria-controls'));
@@ -154,6 +156,7 @@ $(function () {
                 }, 1000);
             }
         })
+        .filter(':not(.no-auto-click)')
         .eq(0)
         .click();
 
@@ -185,6 +188,16 @@ $(function () {
         event.preventDefault();
 
         history.back();
+
+        // 0.5초 뒤에도 현재 페이지에 머물러 있다면 (뒤로 갈 곳이 없는 경우)
+        setTimeout(function () {
+            window.location.href = '../gate/gate-main.html';
+        }, 500);
+    });
+
+    // 로그인 헤더에서 button, a 클릭 시 게이트 메인으로 이동
+    $('.login-header button, .login-header a').on('click', function () {
+        window.location.href = '../gate/gate-main.html';
     });
 });
 
@@ -208,7 +221,12 @@ $(function () {
     $(document).on('click', '[data-popup-close]', function (e) {
         e.preventDefault();
 
-        history.back(); // 뒤로 가기
+        history.back();
+
+        // 0.5초 뒤에도 현재 페이지에 머물러 있다면 (뒤로 갈 곳이 없는 경우)
+        setTimeout(function () {
+            window.location.href = '../gate/gate-main.html';
+        }, 500);
 
         /* 
         const $popup = $(this).closest('.popup');

@@ -61,7 +61,7 @@
         width: 100%;
         height: 100%;
         max-width: 37.5rem;
-        min-height: 100vh;
+        min-height: 72rem;
         background-color: #fff;
         inset: 0;
         /* overflow-y: scroll; */
@@ -176,6 +176,7 @@
         }
         .popup-body .more-btn {
             position: fixed;
+            bottom: calc(100vh - 72rem + 3rem);
             bottom: 3rem;
             width: 100%;
             padding: 0 1.5rem;
@@ -489,6 +490,15 @@
     height: 100%;
 }
 
+#wrap:has(#bottom-nav) {
+    overflow: auto;
+    margin-bottom: 9.2rem;
+}
+
+#wrap:has(#bottom-nav)::-webkit-scrollbar {
+    display: none;
+}
+
 /* Container */
 #container {
     flex-grow: 1;
@@ -512,12 +522,17 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    height: 7.2rem;
     z-index: 999;
 }
 
+@media (min-width: 1024px) {
+    #bottom-nav {
+        bottom: calc(100vh - 72rem);
+    }
+}
+
 .bottom-nav-list {
-    height: 100%;
+    height: 7.2rem;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(5, 1fr);
@@ -578,6 +593,12 @@
     /* overflow-y: scroll; */
 
     .popup-header {
+        max-width: 37.5rem;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        width: 100%;
         display: flex;
         padding: 1.3rem 1.5rem;
         justify-content: space-between;
@@ -591,6 +612,9 @@
     }
 
     .popup-body {
+        /* 헤더 높이만큼 띄워줌 */
+        padding-top: 5.4rem;
+
         display: flex;
         flex-direction: column;
         background-color: #fff;
@@ -639,5 +663,11 @@
         padding: 1.2rem;
         box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.06) inset;
         border-radius: 6px 6px 0 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .popup-body .more-btn {
+        bottom: calc(100vh - 72rem + 3rem);
     }
 }

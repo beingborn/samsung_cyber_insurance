@@ -51,10 +51,10 @@
                                 <div class="sub-card accident-status-wrap fade-in">
                                     <img class="w-100" src="../../assets/images/service_apply_detail_1.png" alt="" />
                                     <div class="accident-status-tab">
-                                        <a href="security-consulting.html">
+                                        <a href="../sub/free-service.html">
                                             <img class="w-100" src="../../assets/images/service_apply_detail_2.png" alt="" />
                                         </a>
-                                        <a href="security-consulting-history.html">
+                                        <a href="../sub/it-security-consulting-history.html">
                                             <img class="w-100" src="../../assets/images/service_apply_detail_3.png" alt="" />
                                         </a>
                                     </div>
@@ -62,28 +62,28 @@
 
                                 <div class="mt-30 d-flex flex-col g-12">
                                     <a href="form-monitoring.html">
-                                        <img class="w-100 fade-in" src="../../assets/images/service_apply_detail_list_1.svg" alt="" />
+                                        <img class="w-100" src="../../assets/images/service_apply_detail_list_1.svg" alt="" />
                                     </a>
                                     <a href="form-mock-training.html">
-                                        <img class="w-100 fade-in" src="../../assets/images/service_apply_detail_list_2.svg" alt="" />
+                                        <img class="w-100" src="../../assets/images/service_apply_detail_list_2.svg" alt="" />
                                     </a>
                                     <a href="homepage.html">
-                                        <img class="w-100 fade-in" src="../../assets/images/service_apply_detail_list_3.svg" alt="" />
+                                        <img class="w-100" src="../../assets/images/service_apply_detail_list_3.svg" alt="" />
                                     </a>
                                     <a href="darkweb-monitoring.html">
-                                        <img class="w-100 fade-in" src="../../assets/images/service_apply_detail_list_4.svg" alt="" />
+                                        <img class="w-100" src="../../assets/images/service_apply_detail_list_4.svg" alt="" />
                                     </a>
                                     <a href="white-monitoring.html">
-                                        <img class="w-100 fade-in" src="../../assets/images/service_apply_detail_list_5.svg" alt="" />
+                                        <img class="w-100" src="../../assets/images/service_apply_detail_list_5.svg" alt="" />
                                     </a>
                                     <a href="control-monitoring.html">
-                                        <img class="w-100 fade-in" src="../../assets/images/service_apply_detail_list_6.svg" alt="" />
+                                        <img class="w-100" src="../../assets/images/service_apply_detail_list_6.svg" alt="" />
                                     </a>
                                 </div>
                             </div>
                             <div class="tab-cont" id="tab-2">
                                 <div class="sub-card accident-status-wrap">
-                                    <img class="w-100" src="../../assets/images/service_apply_detail_1.png" alt="" />
+                                    <img class="w-100" src="../../assets/images/service_apply_security.png" alt="" />
                                     <div class="accident-status-tab">
                                         <a href="security-consulting.html">
                                             <img class="w-100" src="../../assets/images/service_apply_detail_2.png" alt="" />
@@ -100,8 +100,8 @@
                                     <div class="fade-in"><img class="w-100" src="../../assets/images/apply_img03.png" alt="" /></div>
                                 </div>
                                 <div class="svc-apply-btn">
-                            <button href="#n" class="btn01" disabled="">신청하기</button>
-                        </div>
+                                    <button href="#n" class="btn01" disabled="">신청하기</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,6 +181,11 @@
                 </div>
             </main>
 
+            <!-- 문제 정의 -->
+            <!-- 
+                이전 history값의 앞부분을 가지고 와서 그 해당 히스토리의 main으로 이동해야한다. 
+            -->
+
             <nav id="bottom-nav">
                 <ul class="bottom-nav-list">
                     <li>
@@ -223,6 +228,19 @@
         <script src="../../resources/js/common.js"></script>
 
         <script>
+            // 이전 URL 세팅
+            function prevUrlLinksSet() {
+                let activePrototype = localStorage.getItem('active_prototype') || 'prototype-a';
+
+                const $subNavLinks = $('.bottom-nav-list li a');
+                let baseUrl = `../${activePrototype}`;
+
+                $subNavLinks.eq(0).attr('href', `${baseUrl}/main.html`);
+                $subNavLinks.eq(1).attr('href', `${baseUrl}/accident-report.html`);
+            }
+
+            prevUrlLinksSet();
+
             $('.detail-cont').addClass('is-hide');
             $('#hidden-detail-btn').hide();
 

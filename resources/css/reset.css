@@ -122,23 +122,34 @@ section {
 }
 
 html {
-    overflow-x: hidden;
-    height: 100%;
+    height: 72rem;
     font-size: 62.5%;
     scroll-behavior: smooth;
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
+    overflow-x: hidden;
 }
 
 body {
+    position: relative;
     font-weight: 400;
     font-family: 'SamsungOneKorean', sans-serif;
-    min-height: 100vh;
+    height: 72rem;
+    overflow-x: auto;
     line-height: 1.4;
     font-size: 1.4rem;
     /* color: var(--txt-pri); */
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* height 100%인 경우에도 max-height 고정 */
+/* *:not(html, body) {
+    max-height: 72rem;
+} */
 
 input,
 select,
