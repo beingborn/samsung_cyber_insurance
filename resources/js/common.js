@@ -1,5 +1,3 @@
-//$('body:not(.no-ani)').addClass('fade-out');
-
 $(function () {
     // 스크롤 Smoother
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);

@@ -6,9 +6,9 @@
         <title>삼성화재 | 사이버보험 모바일 웹</title>
         <link rel="stylesheet" href="../../resources/css/default.css" />
         <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css" />
-        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script src="../../resources/js/createjs.min.js"></script>
     </head>
-    <body id="type-c" onload="">
+    <body id="type-c" class="fade-in-no-move">
         <div id="wrap">
             <header id="header">
                 <div class="inner">
@@ -33,7 +33,7 @@
                         <div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 360px; height: 720px; position: absolute; left: 0; top: 0; display: block"></div>
                     </div>
                     <div class="shield-txt">
-                        <span class="company-score counter" data-target="90">0</span>
+                        <span class="company-score counter" data-target="90" data-delay="300">0</span>
                     </div>
                 </div>
 
@@ -789,6 +789,69 @@
         <script src="../../resources/js/popper.min.js"></script>
         <script src="../../resources/js/bootstrap.min.js"></script>
         <script src="../../resources/js/common.js"></script>
+        <script src="../../motions/main-shield/top_motion.js"></script>
+        <script>
+            // Adobe Animate 상단 모션 초기화
+            var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
+            function initTopMotion() {
+                canvas = document.getElementById('canvas');
+                anim_container = document.getElementById('animation_container');
+                dom_overlay_container = document.getElementById('dom_overlay_container');
+
+                if (!canvas || !anim_container || !dom_overlay_container || typeof AdobeAn === 'undefined') return;
+
+                var comp = AdobeAn.getComposition('DD8E8EDB82AA6040BAED88450537C171');
+                if (!comp) return;
+
+                var lib = comp.getLibrary();
+                var loader = new createjs.LoadQueue(false);
+                loader.addEventListener('fileload', function (evt) {
+                    handleFileLoadTop(evt, comp);
+                });
+                loader.addEventListener('complete', function (evt) {
+                    handleCompleteTop(evt, comp);
+                });
+                // main.html 기준 경로 설정
+                loader.loadManifest(lib.properties.manifest, true, '../../motions/main-shield/');
+            }
+
+            function handleFileLoadTop(evt, comp) {
+                var images = comp.getImages();
+                if (evt && evt.item.type === 'image') {
+                    images[evt.item.id] = evt.result;
+                }
+            }
+
+            function handleCompleteTop(evt, comp) {
+                var lib = comp.getLibrary();
+                var ss = comp.getSpriteSheet();
+                var queue = evt.target;
+                var ssMetadata = lib.ssMetadata;
+                for (var i = 0; i < ssMetadata.length; i++) {
+                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                        images: [queue.getResult(ssMetadata[i].name)],
+                        frames: ssMetadata[i].frames,
+                    });
+                }
+                exportRoot = new lib.top_motion();
+                stage = new lib.Stage(canvas);
+
+                fnStartAnimation = function () {
+                    stage.addChild(exportRoot);
+                    createjs.Ticker.framerate = lib.properties.fps;
+                    createjs.Ticker.addEventListener('tick', stage);
+                };
+
+                AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
+                AdobeAn.compositionLoaded(lib.properties.id);
+                fnStartAnimation();
+            }
+
+            // window.addEventListener('load', initTopMotion);
+            document.addEventListener('DOMContentLoaded', initTopMotion);
+        </script>
+
         <script>
             $(function () {
                 localStorage.setItem('active_prototype', 'prototype-a-2');
@@ -1041,69 +1104,6 @@
                     },
                 });
             });
-        </script>
-
-        <script src="../../motions/main-shield/top_motion.js"></script>
-        <script>
-            // Adobe Animate 상단 모션 초기화
-
-            var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-
-            function initTopMotion() {
-                canvas = document.getElementById('canvas');
-                anim_container = document.getElementById('animation_container');
-                dom_overlay_container = document.getElementById('dom_overlay_container');
-
-                if (!canvas || !anim_container || !dom_overlay_container || typeof AdobeAn === 'undefined') return;
-
-                var comp = AdobeAn.getComposition('DD8E8EDB82AA6040BAED88450537C171');
-                if (!comp) return;
-
-                var lib = comp.getLibrary();
-                var loader = new createjs.LoadQueue(false);
-                loader.addEventListener('fileload', function (evt) {
-                    handleFileLoadTop(evt, comp);
-                });
-                loader.addEventListener('complete', function (evt) {
-                    handleCompleteTop(evt, comp);
-                });
-                // main.html 기준 경로 설정
-                loader.loadManifest(lib.properties.manifest, true, '../../motions/main-shield/');
-            }
-
-            function handleFileLoadTop(evt, comp) {
-                var images = comp.getImages();
-                if (evt && evt.item.type === 'image') {
-                    images[evt.item.id] = evt.result;
-                }
-            }
-
-            function handleCompleteTop(evt, comp) {
-                var lib = comp.getLibrary();
-                var ss = comp.getSpriteSheet();
-                var queue = evt.target;
-                var ssMetadata = lib.ssMetadata;
-                for (var i = 0; i < ssMetadata.length; i++) {
-                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({
-                        images: [queue.getResult(ssMetadata[i].name)],
-                        frames: ssMetadata[i].frames,
-                    });
-                }
-                exportRoot = new lib.top_motion();
-                stage = new lib.Stage(canvas);
-
-                fnStartAnimation = function () {
-                    stage.addChild(exportRoot);
-                    createjs.Ticker.framerate = lib.properties.fps;
-                    createjs.Ticker.addEventListener('tick', stage);
-                };
-
-                AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
-                AdobeAn.compositionLoaded(lib.properties.id);
-                fnStartAnimation();
-            }
-
-            window.addEventListener('load', initTopMotion);
         </script>
     </body>
 </html>

@@ -409,7 +409,7 @@ body.fade-out {
 
         box-shadow: 0 0 10px 0 rgba(0, 69, 153, 0.2);
     }
-    .inner .d-flex{
+    .inner .d-flex {
         /* padding-bottom:7rem; */
     }
     .border-card {
@@ -2675,7 +2675,7 @@ body.fade-out {
         border: 0.1rem solid #fff;
         background-color: #fff;
         box-shadow: 0px 2px 30px 0px #4964d21a;
-        margin-top: -13rem;
+        margin-top: -10rem;
     }
 
     .sub-card {
@@ -2887,15 +2887,15 @@ body.fade-out {
     /* Main Top Motion */
     .main-top-txt {
         position: absolute;
+        z-index: 1;
         top: 7.8rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .main-top-motion {
-        height: 64.8rem;
+    /* .main-top-motion {
         background: url(../../assets/images/d-main-top-bg.png) no-repeat center / cover;
-    }
+    } */
 
     .main-tit-wrap {
         display: flex;
@@ -3517,7 +3517,7 @@ body.fade-out {
 
     .main-top-motion .shield-txt {
         position: absolute;
-        top: 26.8rem;
+        top: 32.8rem;
         left: 50%;
         transform: translate(-50%, -50%);
     }

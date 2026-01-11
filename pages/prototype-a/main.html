@@ -6,9 +6,9 @@
         <title>삼성화재 | 사이버보험 모바일 웹</title>
         <link rel="stylesheet" href="../../resources/css/default.css" />
         <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css" />
-        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script src="../../resources/js/createjs.min.js"></script>
     </head>
-    <body id="type-d" onload="">
+    <body id="type-d" class="fade-in-no-move">
         <div id="wrap">
             <header id="header">
                 <div class="inner">
@@ -28,12 +28,12 @@
             <main id="container" class="main">
                 <div class="main-top-motion">
                     <img class="main-top-txt" src="../../assets/images/a2-main-txt.svg" alt="" />
-
-                    <div class="shield-wrap">
-                        <div class="shield-inner">
-                            <img src="../../assets/images/a2-main-shield.svg" width="197" height="220" alt="" />
-                            <p class="shield-count counter" data-target="90">0</p>
-                        </div>
+                    <div id="animation_container" style="background-color: rgba(255, 255, 255, 1); width: 360px; height: 552px">
+                        <canvas id="canvas" width="360" height="552" style="position: absolute; display: block; background-color: rgba(255, 255, 255, 1)"></canvas>
+                        <div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 360px; height: 552px; position: absolute; left: 0px; top: 0px; display: block"></div>
+                    </div>
+                    <div class="shield-txt">
+                        <span class="company-score counter" data-target="90" data-delay="300">0</span>
                     </div>
                 </div>
                 <!-- Main Hero -->
@@ -730,67 +730,57 @@
             });
         </script>
 
-        <script src="../../motions/main-shield/top_motion.js"></script>
+        <script src="../../motions/main-shield-a/top_motion2.js"></script>
         <script>
-            // Adobe Animate 상단 모션 초기화
-
             var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 
-            function initTopMotion() {
+            function init() {
                 canvas = document.getElementById('canvas');
                 anim_container = document.getElementById('animation_container');
                 dom_overlay_container = document.getElementById('dom_overlay_container');
-
-                if (!canvas || !anim_container || !dom_overlay_container || typeof AdobeAn === 'undefined') return;
-
-                var comp = AdobeAn.getComposition('DD8E8EDB82AA6040BAED88450537C171');
-                if (!comp) return;
-
+                var comp = AdobeAn.getComposition('9020745C2DF6A24E97AB44C7009A8855');
                 var lib = comp.getLibrary();
                 var loader = new createjs.LoadQueue(false);
                 loader.addEventListener('fileload', function (evt) {
-                    handleFileLoadTop(evt, comp);
+                    handleFileLoad(evt, comp);
                 });
                 loader.addEventListener('complete', function (evt) {
-                    handleCompleteTop(evt, comp);
+                    handleComplete(evt, comp);
                 });
-                // main.html 기준 경로 설정
-                loader.loadManifest(lib.properties.manifest, true, '../../motions/main-shield/');
+                var lib = comp.getLibrary();
+                loader.loadManifest(lib.properties.manifest, true, '../../motions/main-shield-a/');
             }
-
-            function handleFileLoadTop(evt, comp) {
+            function handleFileLoad(evt, comp) {
                 var images = comp.getImages();
-                if (evt && evt.item.type === 'image') {
+                if (evt && evt.item.type == 'image') {
                     images[evt.item.id] = evt.result;
                 }
             }
-
-            function handleCompleteTop(evt, comp) {
+            function handleComplete(evt, comp) {
+                //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
                 var lib = comp.getLibrary();
                 var ss = comp.getSpriteSheet();
                 var queue = evt.target;
                 var ssMetadata = lib.ssMetadata;
-                for (var i = 0; i < ssMetadata.length; i++) {
-                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({
-                        images: [queue.getResult(ssMetadata[i].name)],
-                        frames: ssMetadata[i].frames,
-                    });
+                for (i = 0; i < ssMetadata.length; i++) {
+                    ss[ssMetadata[i].name] = new createjs.SpriteSheet({ images: [queue.getResult(ssMetadata[i].name)], frames: ssMetadata[i].frames });
                 }
-                exportRoot = new lib.top_motion();
+                exportRoot = new lib.top_motion2();
+                exportRoot.addEventListener('tick', AdobeAn.handleFilterCache);
                 stage = new lib.Stage(canvas);
-
+                //Registers the "tick" event listener.
                 fnStartAnimation = function () {
                     stage.addChild(exportRoot);
                     createjs.Ticker.framerate = lib.properties.fps;
                     createjs.Ticker.addEventListener('tick', stage);
                 };
-
+                //Code to support hidpi screens and responsive scaling.
                 AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
                 AdobeAn.compositionLoaded(lib.properties.id);
                 fnStartAnimation();
             }
 
-            window.addEventListener('load', initTopMotion);
+            document.addEventListener('DOMContentLoaded', init);
         </script>
     </body>
 </html>
