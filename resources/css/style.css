@@ -42,6 +42,14 @@ body.fade-out {
     transition: none;
 }
 
+/* Captcha */
+.grecaptcha-badge {
+    right: auto;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: calc(100vh - 72rem + 16rem) !important;
+}
+
 /* 서브 */
 #sub-visual {
     position: relative;

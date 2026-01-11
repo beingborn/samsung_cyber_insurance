@@ -32,12 +32,12 @@
                     <li><a href="#" class="txt-pri weight-700">회원가입</a></li>
                 </ul>
             </div>
-            <!-- capcha 사용 시
+            <!-- capcha 사용 시 -->
             <button data-callback="onSubmit" data-action="submit" data-sitekey="6Ld1rUAsAAAAAOYyja1DbVtQmypwHL5UlL0Vr38i" class="btn btn-pri w-100 flex-item-bottom fade-in fade-in-animate g-recaptcha">로그인</button>
-            -->
 
-            <!-- 미사용 시 -->
+            <!-- 미사용 시
             <button type="submit" class="btn btn-pri w-100 flex-item-bottom fade-in fade-in-animate">로그인</button>
+             -->
         </form>
         <div class="cert-loading">
             <div class="loader-bar">
@@ -139,8 +139,6 @@
             const loginForm = document.querySelector('#login-form');
 
             function onSubmit(token) {
-                return;
-
                 // 2. 로딩 화면 표시
                 showLoading();
 
@@ -155,6 +153,15 @@
                 console.log('reCAPTCHA Token:', token);
             }
 
+            $('.form-input input').focus(function () {
+                $('.grecaptcha-badge').fadeOut();
+            });
+
+            $('.form-input input').blur(function () {
+                $('.grecaptcha-badge').fadeIn();
+            });
+
+            /*
             loginForm.addEventListener('submit', (event) => {
                 event.preventDefault();
 
@@ -168,6 +175,7 @@
                     });
                 }, 500);
             });
+            */
         </script>
     </body>
 </html>
