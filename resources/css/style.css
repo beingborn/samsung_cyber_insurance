@@ -3534,11 +3534,14 @@ body.fade-out {
     }
 
     .shield-txt .company-score {
-        color: #34c6c1;
         text-align: center;
         font-size: 74px;
-        font-weight: 700;
+        font-weight: 800;
         line-height: 100%;
+        background: conic-gradient(from 65deg at 65.71% 50.98%, #3f72ff 176.8239963054657deg, #57a5ff 357.6718211174011deg);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     /* ===== 좌표계 ===== */
