@@ -232,7 +232,7 @@ body.fade-out {
     /* Tab */
     .tab-area {
         width: 100%;
-        padding-bottom: 6rem;
+        /* padding-bottom: 10rem; */
     }
 
     .tab-list {
@@ -409,7 +409,9 @@ body.fade-out {
 
         box-shadow: 0 0 10px 0 rgba(0, 69, 153, 0.2);
     }
-
+    .inner .d-flex{
+        /* padding-bottom:7rem; */
+    }
     .border-card {
         display: flex;
         padding: 1.6rem 1.2rem;
@@ -546,7 +548,7 @@ body.fade-out {
 
     /* Loading */
     .loading-wrap {
-        padding-block: 18rem 6rem;
+        /* padding-block: 18rem 6rem; */
     }
 
     .loading-cont {
@@ -2962,7 +2964,7 @@ body.fade-out {
         border-radius: 8rem;
         /* background-color: red; */
         position: absolute;
-        bottom: -0.3rem;
+        bottom: -0.6rem;
     }
     .security-date .date.blue:after {
         background: linear-gradient(180deg, #3f72ff 0%, #57a5ff 100%);

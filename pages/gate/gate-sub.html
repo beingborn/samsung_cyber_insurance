@@ -11,7 +11,7 @@
             <div id="alertPopup" class="popup" style="display: flex !important">
                 <div class="gate-wrap">
                     <div class="d-flex flex-col items-center">
-                        <a href="javascript:history.back()" class="pos-absolute d-flex flex-col items-center justify-center" style="left: 12px; top: 52px; width: 40px; height: 40px">
+                        <a href="./gate-main.html" class="pos-absolute d-flex flex-col items-center justify-center" style="left: 12px; top: 52px; width: 40px; height: 40px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 15" fill="none">
                                 <path
                                     d="M0.292893 6.65666C-0.0976311 7.04719 -0.0976311 7.68035 0.292893 8.07088L6.65685 14.4348C7.04738 14.8254 7.68054 14.8254 8.07107 14.4348C8.46159 14.0443 8.46159 13.4111 8.07107 13.0206L2.41421 7.36377L8.07107 1.70692C8.46159 1.31639 8.46159 0.683226 8.07107 0.292702C7.68054 -0.0978227 7.04738 -0.0978227 6.65685 0.292702L0.292893 6.65666ZM23 8.36377C23.5523 8.36377 24 7.91605 24 7.36377C24 6.81148 23.5523 6.36377 23 6.36377V7.36377V8.36377ZM1 7.36377V8.36377H23V7.36377V6.36377H1V7.36377Z"
@@ -25,35 +25,28 @@
                         </a>
                         <h2 class="gate-tit fade-in">SUB DESIGN</h2>
                         <div class="sub-gate-box-list fade-in">
-                            <a href="#">
+                            <!-- 사고접수 -->
+                            <a href="../sub/service-apply.html">
                                 <img src="../../assets/images/gate_sub_1.png" alt="" />
                             </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
+                            <!--// 사고접수 -->
+                            <a href="../sub/service-apply.html">
+                                <img src="../../assets/images/gate_sub_2.png" alt="" />
                             </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
+                            <a href="../sub/report-list.html">
+                                <img src="../../assets/images/gate_sub_3.png" alt="" />
                             </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
+                            <a href="../sub/my-page.html">
+                                <img src="../../assets/images/gate_sub_4.png" alt="" />
                             </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
+                            <a href="../sub/search-1.html">
+                                <img src="../../assets/images/gate_sub_5.png" alt="" />
                             </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
+                            <a href="../sub/risk-indicator.html">
+                                <img src="../../assets/images/gate_sub_6.png" alt="" />
                             </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
-                            </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
-                            </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
-                            </a>
-                            <a href="#">
-                                <img src="../../assets/images/gate_sub_1.png" alt="" />
+                            <a href="../sub/free-service.html">
+                                <img src="../../assets/images/gate_sub_7.png" alt="" />
                             </a>
                         </div>
                     </div>
@@ -68,12 +61,19 @@
         <script src="../../resources/js/common.js"></script>
         <script>
             $('.gate-box').addClass('fade-in w-100');
+
+            // 이전 URL 세팅
+            function prevUrlLinksSet() {
+                let activePrototype = localStorage.getItem('active_prototype') || 'prototype-a';
+
+                const $subNavLinks = $('.sub-gate-box-list a');
+                let baseUrl = `../${activePrototype}`;
+
+                $('.gate-logo').attr('href', `${baseUrl}/main.html`);
+                $subNavLinks.eq(0).attr('href', `${baseUrl}/accident-report.html`);
+            }
+
+            prevUrlLinksSet();
         </script>
-        <script src="../../resources/js/jquery-3.7.1.min.js"></script>
-        <script src="../../resources/js/swiper-bundle.min.js"></script>
-        <script src="../../resources/js/gsap.min.js"></script>
-        <script src="../../resources/js/ScrollSmoother.js"></script>
-        <script src="../../resources/js/ScrollTrigger.js"></script>
-        <script src="../../resources/js/common.js"></script>
     </body>
 </html>

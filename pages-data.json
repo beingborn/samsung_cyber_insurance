@@ -13,7 +13,7 @@
                 {
                     "file": "gate-sub.html",
                     "title": "게이트 서브",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -26,27 +26,27 @@
                 {
                     "file": "accident-report.html",
                     "title": "사고접수",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "intro.html",
                     "title": "인트로",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "loading.html",
                     "title": "로딩",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "login.html",
                     "title": "로그인 (시연)",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "main.html",
                     "title": "메인",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -59,18 +59,18 @@
                 {
                     "file": "accident-report.html",
                     "title": "사고접수",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "intro.html",
                     "title": "인트로 (시연)",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "main.html",
                     "title": "메인",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -83,18 +83,18 @@
                 {
                     "file": "accident-report.html",
                     "title": "사고접수",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "intro.html",
                     "title": "인트로 (시연)",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "main.html",
                     "title": "메인",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -107,18 +107,18 @@
                 {
                     "file": "accident-report.html",
                     "title": "사고접수",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "intro.html",
                     "title": "인트로 (시연)",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "main.html",
                     "title": "메인",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -131,18 +131,18 @@
                 {
                     "file": "accident-report.html",
                     "title": "사고접수",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "intro.html",
                     "title": "인트로 (시연)",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "main.html",
                     "title": "메인",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -155,18 +155,18 @@
                 {
                     "file": "accident-report.html",
                     "title": "사고접수",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "intro.html",
                     "title": "인트로 (시연)",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "main.html",
                     "title": "메인",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         },
@@ -178,125 +178,125 @@
                 {
                     "file": "accident-history.html",
                     "title": "사고 접수하기",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "cert-step-1.html",
                     "title": "인증센터 1단계",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "cert-step-2.html",
                     "title": "인증센터 2단계",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "cert-step-3.html",
                     "title": "인증센터 3단계",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "change-password.html",
                     "title": "비밀번호 변경",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "consulting-report-detail.html",
                     "title": "보안컨설팅 보고서 상세",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "exposure-detail.html",
                     "title": "노출 상세",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "form-mock-training.html",
                     "title": "악성메일 모의훈련 신청서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "form-monitoring.html",
                     "title": "외부망 보안점검 및 모니터링 신청서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "control-monitoring.html",
                     "title": "보안관제 신청서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "darkweb-monitoring.html",
                     "title": "다크웹 모니터링 신청서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "white-monitoring.html",
                     "title": "화이트해커 모의해킹 신청서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "homepage.html",
                     "title": "홈페이지 취약점 자동진단 신청서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "it-security-consulting-history.html",
                     "title": "IT보안 서비스 신청이력",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "free-service.html",
                     "title": "IT보안 무료 제공 서비스",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "my-page.html",
                     "title": "마이",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "report-list.html",
                     "title": "보고서",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "risk-indicator.html",
                     "title": "위험지표",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "search-1.html",
                     "title": "검색",
-                    "status": ""
+                    "status": "O"
                 },
 
                 {
                     "file": "security-consulting-history.html",
                     "title": "보안컨설팅 진단이력",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "security-consulting.html",
                     "title": "보안컨설팅 제공 서비스",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "service-application-history.html",
                     "title": "신청이력",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "service-apply.html",
                     "title": "서비스 신청",
-                    "status": ""
+                    "status": "O"
                 },
                 {
                     "file": "threat-intelligence-detail.html",
                     "title": "위협 인텔리전스 보고서 상세",
-                    "status": ""
+                    "status": "O"
                 }
             ]
         }

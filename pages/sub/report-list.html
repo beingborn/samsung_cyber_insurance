@@ -144,7 +144,7 @@
                 </ul>
             </nav>
         </div>
-        <div id="alertPopup" class="popup">
+        <div id="alertPopup" class="popup report">
             <div class="popup-header">
                 <h2 class="tit">위협 인텔리전스 보고서 상세</h2>
                 <button type="button" onclick="window.location.href='./report-list.html'">
@@ -185,6 +185,7 @@
                 const $subNavLinks = $('.bottom-nav-list li a');
                 let baseUrl = `../${activePrototype}`;
 
+                $('#header h1 a').attr('href', `${baseUrl}/main.html`);
                 $subNavLinks.eq(0).attr('href', `${baseUrl}/main.html`);
                 $subNavLinks.eq(1).attr('href', `${baseUrl}/accident-report.html`);
             }

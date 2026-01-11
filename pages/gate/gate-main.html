@@ -57,6 +57,17 @@
         <script src="../../resources/js/common.js"></script>
         <script>
             $('.gate-box').addClass('fade-in w-100');
+
+            // 이전 URL 세팅
+            function prevUrlLinksSet() {
+                let activePrototype = localStorage.getItem('active_prototype') || 'prototype-a';
+
+                let baseUrl = `../${activePrototype}`;
+
+                $('.gate-logo').attr('href', `${baseUrl}/main.html`);
+            }
+
+            prevUrlLinksSet();
         </script>
     </body>
 </html>

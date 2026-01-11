@@ -1,8 +1,6 @@
 //$('body:not(.no-ani)').addClass('fade-out');
 
 $(function () {
-    // Header 클릭 시 어디서든 접근 가능
-
     // 스크롤 Smoother
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 

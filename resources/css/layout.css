@@ -439,6 +439,9 @@
         .cert-loading {
         }
     }
+    .popup.report{
+        position:fixed
+    }
 }
 
 #type-c {
@@ -499,8 +502,11 @@
 .inner {
     width: 100%;
     padding-inline: 1.6rem;
+    
 }
-
+#container > .inner{
+    padding-bottom:10rem;
+}
 /* Footer */
 #footer {
     padding-bottom: 4.6rem;

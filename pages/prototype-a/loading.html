@@ -8,7 +8,12 @@
     </head>
     <body id="type-a">
         <div class="h-screen loading-wrap">
-            <div class="loading-cont fade-in">
+            <img src="../../assets/images/intro01.gif" alt=""  />
+
+
+
+
+            <!-- <div class="loading-cont fade-in">
                 <p class="loading-tit">
                     사이버 보험으로<br />
 
@@ -21,16 +26,15 @@
             </div>
             <div class="flex-item-bottom">
                 <img src="../../assets/images/logo/logo_text_pri_en.svg" alt="삼성화재 사이버보험 영문" width="92" height="32" />
-            </div>
+            </div> -->
         </div>
-        <div class="loader-wrap">
+        <!-- <div class="loader-wrap">
             <div class="loader-container">
                 <div class="d-flex flex-col g-12">
                     <span class="loader"></span>
-                    <!-- <span class="txt-pri">로딩중..</span> -->
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <script src="../../resources/js/jquery-3.7.1.min.js"></script>
         <script src="../../resources/js/swiper-bundle.min.js"></script>
@@ -46,23 +50,29 @@
                 }
 
                 function loadingAnimationTest() {
+                    // setTimeout(() => {
+                    //     let initValue = 0;
+
+                    //     let loadingTimer = setInterval(() => {
+                    //         $('#loading-progress').attr('value', initValue++);
+
+                    //         if (+$('#loading-progress').attr('value') === 100) {
+                    //             clearInterval(loadingTimer);
+
+                    //             showLoading();
+
+                    //             setTimeout(() => {
+                    //                 $(location).attr('href', './login.html');
+                    //             }, 1500);
+                    //         }
+                    //     }, 50);
+                    // }, 1000);
+                    showLoading();
+
+
                     setTimeout(() => {
-                        let initValue = 0;
-
-                        let loadingTimer = setInterval(() => {
-                            $('#loading-progress').attr('value', initValue++);
-
-                            if (+$('#loading-progress').attr('value') === 100) {
-                                clearInterval(loadingTimer);
-
-                                showLoading();
-
-                                setTimeout(() => {
-                                    $(location).attr('href', './login.html');
-                                }, 1500);
-                            }
-                        }, 50);
-                    }, 1000);
+                        location.href = './login.html';
+                    }, 5000);
                 }
 
                 loadingAnimationTest();

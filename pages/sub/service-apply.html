@@ -235,6 +235,7 @@
                 const $subNavLinks = $('.bottom-nav-list li a');
                 let baseUrl = `../${activePrototype}`;
 
+                $('#header h1 a').attr('href', `${baseUrl}/main.html`);
                 $subNavLinks.eq(0).attr('href', `${baseUrl}/main.html`);
                 $subNavLinks.eq(1).attr('href', `${baseUrl}/accident-report.html`);
             }
