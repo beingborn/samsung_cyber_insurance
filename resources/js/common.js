@@ -53,7 +53,7 @@ $(function () {
                         if (remain <= 0) return;
                     },
                     complete: function () {
-                        console.log('완료');
+                        console.log('애니메이션 완료');
 
                         // $this.text(this.countNum);
                     },

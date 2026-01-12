@@ -7,9 +7,14 @@
     z-index: 999;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 460px) {
     html #bottom-nav {
         bottom: calc(100vh - 72rem);
+    }
+}
+
+@media (min-width: 376px) {
+    body {
     }
 }
 

@@ -5,26 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>삼성화재 | 사이버보험 모바일 웹</title>
         <link rel="stylesheet" href="../../resources/css/default.css" />
-
-        <style>
-            /* Captcha */
-            .grecaptcha-badge {
-                width: 256px !important;
-                position: absolute;
-                right: auto;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                bottom: calc(100vh - 72rem + 12rem) !important;
-                transition: none !important;
-                overflow: hidden !important;
-            }
-
-            /* 내부 iframe과 div들이 숨겨지지 않도록 강제 확장 */
-            .grecaptcha-badge div,
-            .grecaptcha-badge iframe {
-                width: 256px !important;
-            }
-        </style>
     </head>
     <body id="type-a">
         <form id="login-form" class="h-screen login-wrap inner">
@@ -170,6 +150,37 @@
                 }, 500);
             });
             */
+        </script>
+
+        <style>
+            /* Captcha */
+            .grecaptcha-badge {
+                width: 256px !important;
+                position: absolute !important;
+                right: auto;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                bottom: 120px !important;
+                transition: none !important;
+                overflow: hidden !important;
+            }
+
+            /* 내부 iframe과 div들이 숨겨지지 않도록 강제 확장 */
+            .grecaptcha-badge div,
+            .grecaptcha-badge iframe {
+                width: 256px !important;
+            }
+
+            .rc-anchor-normal .rc-anchor-pt,
+            .rc-anchor-invisible .rc-anchor-pt,
+            .rc-anchor-compact .rc-anchor-pt {
+                font-size: 7px !important;
+
+                display: none !important;
+            }
+        </style>
+        <script>
+            $('.rc-anchor').addClass('rc-anchor-invisible-hover-hovered');
         </script>
     </body>
 </html>
