@@ -17,9 +17,6 @@
                         <button type="button" onclick="window.location.href='../sub/search-1.html'">
                             <img src="../../assets/images/icon/icon_find_bk.svg" alt="" />
                         </button>
-                        <a href="../gate/gate-main.html">
-                            <img src="../../assets/images/icon/ico_menu.svg" alt="" />
-                        </a>
                     </div>
                 </div>
             </header>
@@ -60,7 +57,7 @@
                                     </div>
                                 </div>
 
-                                <div class="mt-30 d-flex flex-col g-12" style="padding-bottom: 10rem;">
+                                <div class="mt-30 d-flex flex-col g-12" style="padding-bottom: 10rem">
                                     <a href="form-monitoring.html">
                                         <img class="w-100" src="../../assets/images/service_apply_detail_list_1.svg" alt="" />
                                     </a>
@@ -99,7 +96,7 @@
                                     <div class="fade-in"><img class="w-100" src="../../assets/images/apply_img02.png" alt="" /></div>
                                     <div class="fade-in"><img class="w-100" src="../../assets/images/apply_img03.png" alt="" /></div>
                                 </div>
-                                <div class="svc-apply-btn" style="padding-bottom: 10rem;">
+                                <div class="svc-apply-btn" style="padding-bottom: 10rem">
                                     <button href="#n" class="btn01" disabled="">신청하기</button>
                                 </div>
                             </div>
@@ -235,7 +232,7 @@
                 const $subNavLinks = $('.bottom-nav-list li a');
                 let baseUrl = `../${activePrototype}`;
 
-                $('#header h1 a').attr('href', `${baseUrl}/main.html`);
+                $('#header h1 a').attr('href', `${baseUrl}/login.html`);
                 $subNavLinks.eq(0).attr('href', `${baseUrl}/main.html`);
                 $subNavLinks.eq(1).attr('href', `${baseUrl}/accident-report.html`);
             }

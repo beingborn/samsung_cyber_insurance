@@ -5,13 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>삼성화재 | 사이버보험 모바일 웹</title>
         <link rel="stylesheet" href="../../resources/css/default.css" />
+
+        <style>
+            /* Captcha */
+            .grecaptcha-badge {
+                right: auto;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                bottom: calc(100vh - 72rem + 16rem) !important;
+            }
+        </style>
     </head>
     <body id="type-a">
         <form id="login-form" class="h-screen login-wrap inner">
             <div class="login-header pos-relative fade-in">
-                <button type="button" class="pos-absolute pos-left-0 pos-top-0">
+                <a id="pro-a-login" href="./main.html" class="pos-absolute pos-left-0 pos-top-0">
                     <img src="../../assets/images/icon/icon_arrow_left_tail.svg" alt="" />
-                </button>
+                </a>
                 <h1>
                     <img src="../../assets/images/logo/logo_text_pri_ko.svg" alt="삼성화재 사이버 보험" />
                 </h1>

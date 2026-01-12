@@ -194,7 +194,7 @@ $(function () {
     });
 
     // 로그인 헤더에서 button, a 클릭 시 게이트 메인으로 이동
-    $('.login-header button, .login-header a').on('click', function () {
+    $('.login-header button, .login-header a:not(#pro-a-login)').on('click', function () {
         window.location.href = '../gate/gate-main.html';
     });
 });
