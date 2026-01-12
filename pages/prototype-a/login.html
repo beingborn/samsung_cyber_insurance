@@ -9,10 +9,20 @@
         <style>
             /* Captcha */
             .grecaptcha-badge {
+                width: 256px !important;
+                position: absolute;
                 right: auto;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                bottom: calc(100vh - 72rem + 16rem) !important;
+                bottom: calc(100vh - 72rem + 12rem) !important;
+                transition: none !important;
+                overflow: hidden !important;
+            }
+
+            /* 내부 iframe과 div들이 숨겨지지 않도록 강제 확장 */
+            .grecaptcha-badge div,
+            .grecaptcha-badge iframe {
+                width: 256px !important;
             }
         </style>
     </head>
@@ -134,6 +144,7 @@
                 console.log('token', token);
             }
 
+            /*
             $('.form-input input').focus(function () {
                 $('.grecaptcha-badge').fadeOut();
             });
@@ -141,6 +152,7 @@
             $('.form-input input').blur(function () {
                 $('.grecaptcha-badge').fadeIn();
             });
+            */
 
             /*
             loginForm.addEventListener('submit', (event) => {

@@ -46,13 +46,13 @@
 
                                 <ul class="detail-cont detail-ul">
                                     <li>
-                                        <button data-popup-open="#alertPopup">2025년 11월 인포스틸러 동향 보고서</button>
+                                        <button>2025년 11월 인포스틸러 동향 보고서</button>
                                     </li>
                                     <li>
-                                        <button data-popup-open="#alertPopup">2025년 11월 랜섬웨어 동향 보고서</button>
+                                        <button>2025년 11월 랜섬웨어 동향 보고서</button>
                                     </li>
                                     <li>
-                                        <button data-popup-open="#alertPopup">2025년 11월 APT 그룹 동향 보고서</button>
+                                        <button>2025년 11월 APT 그룹 동향 보고서</button>
                                     </li>
                                 </ul>
                                 <div class="d-flex justify-center mt-40">
@@ -78,13 +78,13 @@
 
                                 <ul class="detail-cont detail-ul">
                                     <li>
-                                        <button data-popup-open="#alertPopup">2025년 10월 인포스틸러 동향 보고서</button>
+                                        <button>2025년 10월 인포스틸러 동향 보고서</button>
                                     </li>
                                     <li>
-                                        <button data-popup-open="#alertPopup">2025년 10월 랜섬웨어 동향 보고서</button>
+                                        <button>2025년 10월 랜섬웨어 동향 보고서</button>
                                     </li>
                                     <li>
-                                        <button data-popup-open="#alertPopup">2025년 10월 APT 그룹 동향 보고서</button>
+                                        <button>2025년 10월 APT 그룹 동향 보고서</button>
                                     </li>
                                 </ul>
                                 <div class="d-flex justify-center mt-40">
@@ -175,6 +175,10 @@
         <script src="../../resources/js/common.js"></script>
 
         <script>
+            $('.detail-ul li button').click(function () {
+                window.location.href = '../sub/consulting-report-detail.html';
+            });
+
             // 이전 URL 세팅
             function prevUrlLinksSet() {
                 let activePrototype = localStorage.getItem('active_prototype') || 'prototype-a';

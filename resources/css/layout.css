@@ -7,6 +7,12 @@
     z-index: 999;
 }
 
+@media (min-width: 450px) {
+    html #bottom-nav {
+        bottom: calc(100vh - 72rem);
+    }
+}
+
 #type-a {
     #header .inner {
         display: flex;
@@ -439,8 +445,8 @@
         .cert-loading {
         }
     }
-    .popup.report{
-        position:fixed
+    .popup.report {
+        position: fixed;
     }
 }
 
@@ -502,9 +508,8 @@
 .inner {
     width: 100%;
     padding-inline: 1.6rem;
-    
 }
-#container > .inner{
+#container > .inner {
     /* padding-bottom:10rem; */
 }
 /* Footer */
