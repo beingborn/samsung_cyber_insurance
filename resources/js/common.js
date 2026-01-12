@@ -2,6 +2,35 @@ $(function () {
     // 스크롤 Smoother
     gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
+    $(document).ready(function () {
+        // 1. 현재 상태를 저장 (PC: true, 모바일: false)
+        let isPcStatus = $(window).width() >= 768;
+
+        function wrapMobileLayout() {
+            const windowWidth = $(window).width();
+
+            if (windowWidth >= 768 && $('#app-container').length === 0) {
+                // PC 모드 적용: script와 이미 생성된 요소를 제외하고 wrap
+                $('body > :not(script, #app-container)').wrapAll('<div id="app-container"></div>');
+                $('body').addClass('pc-mode');
+            }
+        }
+
+        // 초기 실행
+        wrapMobileLayout();
+
+        // 2. 리사이즈 이벤트 감시
+        $(window).on('resize', function () {
+            const currentWidth = $(window).width();
+            const isNowPc = currentWidth >= 768;
+
+            // 상태가 변경되었을 때만 새로고침 (무한 리로드 방지)
+            if (isNowPc !== isPcStatus) {
+                location.reload();
+            }
+        });
+    });
+
     // Smoother Wrapper 사용 시 작업
     if ($('.smoother-wrapper').length && $('.smoother-content').length) {
         ScrollSmoother.create({
@@ -62,41 +91,93 @@ $(function () {
         }, delay);
     });
 
-    const scrollEl = $(window);
+    $(document).ready(function () {
+        const $window = $(window);
+        const $container = $('#app-container');
+        const $bottomNav = $('#bottom-nav');
 
-    function checkFadeIn() {
-        $('.fade-in').each(function (i) {
-            var bottom_of_element = $(this).offset().top + 100;
-            var bottom_of_window = scrollEl.scrollTop() + scrollEl.height();
+        function adjustBottomNav() {
+            if ($window.width() >= 768 && $container.length > 0) {
+                // 컨테이너가 스크롤된 만큼 하단 바의 위치를 아래로 이동시킴
+                const scrollTop = $container.scrollTop();
 
-            if (bottom_of_window > bottom_of_element) {
-                $(this).addClass('fade-in-animate');
+                // translate 또는 top/bottom 값을 스크롤 양에 맞춰 보정
+                $bottomNav.css({
+                    transform: 'translateY(' + scrollTop + 'px)',
+                    position: 'absolute', // fixed 대신 absolute로 기준점 활용
+                    bottom: '0',
+                    left: '0',
+                });
+            } else {
+                // 모바일 환경일 때는 보정 해제
+                $bottomNav.css({
+                    transform: '',
+                    position: 'fixed',
+                    bottom: '0',
+                });
             }
-        });
-    }
-
-    // Header Fixed 여부 스타일
-    const headerTypeC = $('#type-c #header .inner, #type-d #header .inner');
-
-    function checkScroll() {
-        console.log(scrollEl.scrollTop());
-
-        if (headerTypeC.outerHeight() < scrollEl.scrollTop()) {
-            headerTypeC.removeClass('is-top').addClass('is-fixed');
-        } else if (scrollEl.scrollTop() < headerTypeC.outerHeight()) {
-            headerTypeC.removeClass('is-fixed').addClass('is-top');
         }
-    }
 
-    // Scroll이 올라가는 현상
+        // 컨테이너 스크롤 시마다 실행
+        $container.on('scroll', adjustBottomNav);
 
-    // Scroll Event
-    scrollEl.on('scroll', checkFadeIn);
-    scrollEl.on('scroll', checkScroll);
+        // 창 크기가 바뀔 때를 대비해 초기 실행 및 리사이즈 대응
+        $(window).on('resize', adjustBottomNav);
+        adjustBottomNav();
+    });
 
-    // Document Ready
-    checkFadeIn();
-    checkScroll();
+    $(document).ready(function () {
+        let scrollEl;
+        let isPC = $(window).width() >= 768;
+
+        // 1. 환경에 따라 스크롤 주체 설정
+        if (isPC && $('#app-container').length > 0) {
+            scrollEl = $('#app-container');
+        } else {
+            scrollEl = $(window);
+        }
+
+        function checkFadeIn() {
+            $('.fade-in').each(function () {
+                let elementTop;
+
+                if (isPC) {
+                    // PC 모드(박스 스크롤)일 때는 컨테이너 내에서의 상대 위치를 계산해야 함
+                    // 요소의 절대좌표 - 컨테이너의 절대좌표 + 현재 컨테이너의 스크롤 값
+                    elementTop = $(this).offset().top - scrollEl.offset().top + scrollEl.scrollTop();
+                } else {
+                    elementTop = $(this).offset().top;
+                }
+
+                const bottom_of_element = elementTop + 100;
+                const bottom_of_window = scrollEl.scrollTop() + scrollEl.height();
+
+                if (bottom_of_window > bottom_of_element) {
+                    $(this).addClass('fade-in-animate');
+                }
+            });
+        }
+
+        const headerTypeC = $('#type-c #header .inner, #type-d #header .inner');
+
+        function checkScroll() {
+            const currentScroll = scrollEl.scrollTop();
+
+            if (headerTypeC.outerHeight() < currentScroll) {
+                headerTypeC.removeClass('is-top').addClass('is-fixed');
+            } else {
+                headerTypeC.removeClass('is-fixed').addClass('is-top');
+            }
+        }
+
+        // 2. 결정된 scrollEl에 이벤트 바인딩
+        scrollEl.on('scroll', checkFadeIn);
+        scrollEl.on('scroll', checkScroll);
+
+        // 초기 실행 (로드 시점에 이미 위치에 있는 요소들 체크)
+        checkFadeIn();
+        checkScroll();
+    });
 
     //popup Toggle01
     $('.toggle-01 .pop-tit').click(function () {
