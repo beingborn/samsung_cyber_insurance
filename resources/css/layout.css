@@ -18,7 +18,16 @@ body {
         overflow-x: hidden !important;
     }
 
+    #header,
+    .popup-header,
+    #bottom-nav {
+        will-change: transform; /* 브라우저에게 변화를 미리 알려줌 */
+        transition: none !important; /* 애니메이션 효과가 계산을 방해하지 않게 함 */
+    }
+
     #app-container {
+        scroll-behavior: smooth;
+
         width: 37.5rem;
         height: 72rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
