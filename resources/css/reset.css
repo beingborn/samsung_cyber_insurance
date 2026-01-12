@@ -142,9 +142,9 @@ body {
     /* color: var(--txt-pri); */
 }
 
-body:has(#bottom-nav) {
+/* body:has(#bottom-nav) {
     margin-bottom: 9.2rem;
-}
+} */
 
 body::-webkit-scrollbar {
     display: none;
