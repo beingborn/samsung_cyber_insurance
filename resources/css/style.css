@@ -3514,7 +3514,7 @@ body.fade-out {
     .main-top-motion .shield-txt {
         position: absolute;
         left: 50%;
-        top: calc(50% + 5rem);
+        top: calc(50% + 4.5rem);
         transform: translate(-50%, calc(-50%));
     }
 
