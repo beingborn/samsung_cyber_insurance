@@ -16,7 +16,7 @@
 
 html {
     background-color: #fff;
-    max-width: 37.5rem;
+    max-width: none;
     margin: 0 auto;
 
     #header,
@@ -25,7 +25,7 @@ html {
     .cert-loading,
     .intro-wrap,
     .loading-wrap {
-        max-width: 37.5rem;
+        max-width: none;
         max-height: 72rem;
     }
 }
@@ -106,6 +106,10 @@ body.fade-out {
 
 .sub-gate-box-list > a {
     text-align: center;
+}
+
+#animation_container {
+    margin: 0 auto;
 }
 
 /* 자세히 보기 */
@@ -916,7 +920,7 @@ body.fade-out {
         display: flex;
         width: 100%;
         margin-top: 2rem;
-        max-width: 37.5rem;
+        max-width: none;
     }
     .svc-apply-btn .btn01 {
         width: 100%;
@@ -2075,7 +2079,7 @@ body.fade-out {
         position: absolute;
         top: 25.2rem;
         width: 100%;
-        max-width: 37.5rem;
+        max-width: none;
         text-align: center;
     }
 
@@ -3509,9 +3513,9 @@ body.fade-out {
 
     .main-top-motion .shield-txt {
         position: absolute;
-        top: 32.8rem;
         left: 50%;
-        transform: translate(-50%, -50%);
+        top: calc(50% + 5rem);
+        transform: translate(-50%, calc(-50%));
     }
 
     .shield-txt .company-name {

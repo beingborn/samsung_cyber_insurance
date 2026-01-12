@@ -122,7 +122,7 @@ section {
 }
 
 html {
-    height: 72rem;
+    /* height: 72rem; */
     font-size: 62.5%;
     scroll-behavior: smooth;
     -moz-text-size-adjust: none;
@@ -135,8 +135,8 @@ body {
     position: relative;
     font-weight: 400;
     font-family: 'SamsungOneKorean', sans-serif;
-    height: 72rem;
-    overflow-x: auto;
+    /* height: 72rem; */
+
     line-height: 1.4;
     font-size: 1.4rem;
     /* color: var(--txt-pri); */

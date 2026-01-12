@@ -62,10 +62,12 @@ $(function () {
         }, delay);
     });
 
+    const scrollEl = $(window);
+
     function checkFadeIn() {
         $('.fade-in').each(function (i) {
             var bottom_of_element = $(this).offset().top + 100;
-            var bottom_of_window = $('body').scrollTop() + $('body').height();
+            var bottom_of_window = scrollEl.scrollTop() + scrollEl.height();
 
             if (bottom_of_window > bottom_of_element) {
                 $(this).addClass('fade-in-animate');
@@ -77,9 +79,11 @@ $(function () {
     const headerTypeC = $('#type-c #header .inner, #type-d #header .inner');
 
     function checkScroll() {
-        if (headerTypeC.outerHeight() < $('body').scrollTop()) {
+        console.log(scrollEl.scrollTop());
+
+        if (headerTypeC.outerHeight() < scrollEl.scrollTop()) {
             headerTypeC.removeClass('is-top').addClass('is-fixed');
-        } else if ($('body').scrollTop() < headerTypeC.outerHeight()) {
+        } else if (scrollEl.scrollTop() < headerTypeC.outerHeight()) {
             headerTypeC.removeClass('is-fixed').addClass('is-top');
         }
     }
@@ -87,8 +91,8 @@ $(function () {
     // Scroll이 올라가는 현상
 
     // Scroll Event
-    $('body').on('scroll', checkFadeIn);
-    $('body').on('scroll', checkScroll);
+    scrollEl.on('scroll', checkFadeIn);
+    scrollEl.on('scroll', checkScroll);
 
     // Document Ready
     checkFadeIn();

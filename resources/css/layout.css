@@ -8,9 +8,9 @@
 }
 
 @media (min-width: 460px) {
-    html #bottom-nav {
+    /* html #bottom-nav {
         bottom: calc(100vh - 72rem);
-    }
+    } */
 }
 
 @media (min-width: 376px) {
@@ -71,7 +71,7 @@
         z-index: 10000;
         width: 100%;
         height: 100%;
-        max-width: 37.5rem;
+        max-width: none;
         min-height: 72rem;
         background-color: #fff;
         inset: 0;
@@ -187,12 +187,12 @@
         }
         .popup-body .more-btn {
             position: fixed;
-            bottom: calc(100vh - 72rem + 3rem);
+            /* bottom: calc(100vh - 72rem + 3rem); */
             bottom: 3rem;
             width: 100%;
             padding: 0 1.5rem;
             margin: 0 -1.5rem;
-            max-width: 37.5rem;
+            max-width: none;
         }
         .popup-body .more-btn.relative {
             position: relative;
@@ -309,7 +309,7 @@
             position: fixed;
             bottom: 3rem;
             margin: 0 -1.5rem;
-            max-width: 37.5rem;
+            max-width: none;
         }
         .cert-btn.relative {
             position: relative;
@@ -532,11 +532,11 @@
     z-index: 999;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     #bottom-nav {
         bottom: calc(100vh - 72rem);
     }
-}
+} */
 
 .bottom-nav-list {
     height: 7.2rem;
@@ -591,7 +591,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 10000;
-    max-width: 37.5rem;
+    max-width: none;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -600,7 +600,7 @@
     /* overflow-y: scroll; */
 
     .popup-header {
-        max-width: 37.5rem;
+        max-width: none;
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
@@ -673,8 +673,8 @@
     }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     .popup-body .more-btn {
         bottom: calc(100vh - 72rem + 3rem);
     }
-}
+} */
