@@ -308,7 +308,7 @@ $(function () {
 
         // 0.5초 뒤에도 현재 페이지에 머물러 있다면 (뒤로 갈 곳이 없는 경우)
         setTimeout(function () {
-            window.location.href = '../gate/gate-main.html';
+            window.location.href = '../prototype-a/main.html';
         }, 500);
 
         /* 
