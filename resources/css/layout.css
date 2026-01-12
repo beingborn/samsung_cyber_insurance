@@ -43,6 +43,14 @@ body {
         z-index: 999;
         transition: none;
     }
+
+    #header,
+    .popup-header {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: none;
+    }
 }
 
 #type-a {

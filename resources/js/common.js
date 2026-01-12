@@ -94,38 +94,58 @@ $(function () {
     $(document).ready(function () {
         const $window = $(window);
         const $container = $('#app-container');
+
+        // 보정할 요소들을 미리 변수에 담아 성능 최적화
         const $bottomNav = $('#bottom-nav');
+        const $headers = $('#header, .popup-header');
 
-        function adjustBottomNav() {
-            if ($window.width() >= 768 && $container.length > 0) {
-                // 컨테이너가 스크롤된 만큼 하단 바의 위치를 아래로 이동시킴
-                const scrollTop = $container.scrollTop();
+        function adjustFixedElements() {
+            const isPC = $window.width() >= 768 && $container.length > 0;
+            const scrollTop = $container.scrollTop();
 
-                // translate 또는 top/bottom 값을 스크롤 양에 맞춰 보정
-                $bottomNav.css({
+            if (isPC) {
+                // 1. 헤더 보정 (Top 고정)
+                $headers.css({
+                    position: 'absolute',
+                    top: '0',
+                    bottom: 'auto', // 하단 고정 속성 제거
+                    left: '0',
+                    width: '100%',
                     transform: 'translateY(' + scrollTop + 'px)',
-                    position: 'absolute', // fixed 대신 absolute로 기준점 활용
+                    'z-index': '1000',
+                });
+
+                // 2. 하단바 보정 (Bottom 고정)
+                $bottomNav.css({
+                    position: 'absolute',
+                    top: 'auto', // 상단 고정 속성 제거
                     bottom: '0',
                     left: '0',
+                    width: '100%',
+                    transform: 'translateY(' + scrollTop + 'px)',
+                    'z-index': '1000',
                 });
             } else {
-                // 모바일 환경일 때는 보정 해제
-                $bottomNav.css({
+                // 모바일 환경: 모든 인라인 스타일 제거 (CSS 파일 설정으로 복구)
+                $headers.add($bottomNav).css({
+                    position: '',
+                    top: '',
+                    bottom: '',
+                    left: '',
+                    width: '',
                     transform: '',
-                    position: 'fixed',
-                    bottom: '0',
+                    'z-index': '',
                 });
             }
         }
 
-        // 컨테이너 스크롤 시마다 실행
-        $container.on('scroll', adjustBottomNav);
+        // 스크롤 및 리사이즈 이벤트 연결
+        $container.on('scroll', adjustFixedElements);
+        $window.on('resize', adjustFixedElements);
 
-        // 창 크기가 바뀔 때를 대비해 초기 실행 및 리사이즈 대응
-        $(window).on('resize', adjustBottomNav);
-        adjustBottomNav();
+        // 페이지 로드 시 즉시 실행
+        adjustFixedElements();
     });
-
     $(document).ready(function () {
         let scrollEl;
         let isPC = $(window).width() >= 768;
