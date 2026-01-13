@@ -499,6 +499,10 @@
         <script src="../../resources/js/common.js"></script>
         <script>
             $(function () {
+                if ($(window).width() < 768) {
+                    location.reload();
+                }
+
                 setTimeout(() => {
                     $('#animation_container').attr('style', 'width: 100% !important; position: relative;');
                     $('#animation_container canvas').attr('style', 'width: 100% !important');
@@ -532,7 +536,7 @@
 
                 // 보안 캘린더
                 const securityCalendarSwiper = new Swiper('.security-calendar .swiper', {
-                    // allowTouchMove: false,
+                    allowTouchMove: false,
 
                     slidesPerView: '7',
                     centeredSlides: true,
