@@ -537,12 +537,12 @@
 }
 
 .fade-in-animate {
-    animation: fade-in 1.5s;
+    animation: fade-in 1s;
     animation-fill-mode: forwards;
 }
 
 .fade-in-no-move {
-    animation: fade-in-no-move 1.5s;
+    animation: fade-in-no-move 1s;
     animation-fill-mode: forwards;
 }
 
